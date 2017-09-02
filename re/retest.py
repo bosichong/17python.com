@@ -3,7 +3,7 @@
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
-# @Title   : Python 采集数据三步曲之（正则表达式 re.py）
+# @Title   : Python 采集数据三步曲之[正则表达式 re.py]
 # @Url     : http://www.17python.com/blog/9
 # @Details : 有关python正则表达式学习笔记
 # @Other   : OS X 10.11.6 

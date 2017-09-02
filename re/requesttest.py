@@ -5,7 +5,7 @@
 # @Site    : www.17python.com
 # @Title   : Python 采集数据三步曲之[Requests开源协议的HTTP 库]
 # @Url     : http://www.17python.com/blog/10
-# @Details : 有关python正则表达式学习笔记
+# @Details : Requests开源协议的HTTP 库
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1
 #            VSCode 1.15.1

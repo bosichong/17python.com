@@ -3,7 +3,7 @@
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
-# @Title   : Python
+# @Title   : Python os.path模块中一些常用方法的整理总结
 # @Url     : http://www.17python.com/blog/12
 # @Details : Python os.path模块中一些常用方法的整理总结
 # @Other   : OS X 10.11.6 

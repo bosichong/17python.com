@@ -60,16 +60,17 @@ def t(func):
         print('程序运行时间:{:.2f}ms'.format((end-start)*1000))
     return wrapper
 
-def log(func):
+def log(fun):
     '''一个打印函数运行日志的方法'''
     def wrapper(*args, **kwargs):
-        print('函数开始运行')
-        func(*args, **kwargs)
-        print('函数运行结束')
+        print(fun.__name__,'函数开始运行')
+        fun(*args, **kwargs)
+        print(fun.__name__,'函数运行结束')
     return wrapper
 
-@log #打印日志
+
 @t  #统计程序运行时间
+@log #打印日志
 def myfunc(x,y):
     '''打印从x到y的数值'''
     for i in range(x,y):

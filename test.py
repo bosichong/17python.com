@@ -9,4 +9,8 @@
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1
 #            VSCode 1.15.1
-print('你好，世界！')
+# print(len('你好'))
+class Hello:
+    def __init__(self):
+        print('hello world')
+Hello()

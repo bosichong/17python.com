@@ -14,3 +14,6 @@ class Hello:
     def __init__(self):
         print('hello world')
 Hello()
+
+for i in range(10):
+    print(i, end=' ')

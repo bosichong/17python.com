@@ -85,3 +85,4 @@ for text, mode in MODES:
         b.pack(anchor=tk.W)
 
 root.mainloop()
+

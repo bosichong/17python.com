@@ -111,8 +111,6 @@ cat = Cat("Tom")
 cat.say()
 
 '''
-## Python的多态
-
 `isinstance()`函数，可以用来判断一个变量是否是某个类，我们测试一下
 
 '''

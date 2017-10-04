@@ -4,7 +4,7 @@
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
 # @Title   : Python多线程编程（1）多线程创建的几种方法
-# @Url     : http://www.17python.com/
+# @Url     : http://www.17python.com/blog/32
 # @Details : Python多线程编程（1）多线程创建的几种方法
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1

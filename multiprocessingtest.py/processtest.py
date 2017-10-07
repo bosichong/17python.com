@@ -3,14 +3,14 @@
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
-# @Title   : Python并发编程（1）进程模块multiprocessing模块和Process类
+# @Title   : Python并发编程（上）进程模块multiprocessing模块和Process类
 # @Url     : http://www.17python.com/blog/34
-# @Details : Python并发编程（1）进程模块multiprocessing模块和Process类
+# @Details : Python并发编程（上）进程模块multiprocessing模块和Process类
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1
 #            VSCode 1.15.1
 ###################################
-# Python并发编程（1）进程模块multiprocessing模块和Process类
+# Python并发编程（上）进程模块multiprocessing模块和Process类
 ###################################
 '''
 ## Python中为什么要用多进程编程？

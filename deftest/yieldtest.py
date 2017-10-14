@@ -19,7 +19,9 @@
 
 ## 什么是生成器？
 
-书上说：函数使用yield可以定义生成器对象，那么包含yield的函数主是一个生成器函数，它可以生成一个序列，方便迭代中使用：
+书上说：函数使用yield可以定义生成器对象，那么包含yield的函数主是一个生成器函数，它可以生成一个序列，方便迭代中使用
+
+`__next__()`#python3中的特殊方法，应该避免使用特殊方法，`next(c)`使用内置函数next()即可。
 '''
 
 def countdown(n):
@@ -30,9 +32,8 @@ def countdown(n):
     return
 
 c = countdown(10)
-print(c.__next__())
-print(c.__next__())
-print(c.__next__())
+print(c.__next__())#python3中的特殊方法，应该避免使用特殊方法
+print(next(c))#使用内置函数next()
 for i in c :
     print(i,end=' ')
 '''
@@ -51,9 +52,9 @@ def countdown1(n):
     return
 
 c = countdown1(10)
-print(c.__next__())
-print(c.__next__())
-print(c.__next__())
+print(next(c))
+print(next(c))
+print(next(c))
 for i in c :
     print(i,end=' ')
 
@@ -68,9 +69,8 @@ for i in c :
 '''
 print('')
 print("生成器表达式:")
-b = (x*x for x in range(10) if (x % 2 ==0))
-b.__next__()
-print(b.__next__())
-print(b.__next__())
+b = (x*x for x in range(1,10) if (x % 2 == 0))
+print(next(b))
+print(next(b))
 for i in b :
     print(i, end=' ')

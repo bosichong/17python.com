@@ -4,7 +4,7 @@
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
 # @Title   : Python中创建TCP服务器与客户端进行通信(中)Tk、thread与socket组合。
-# @Url     : http://www.17python.com/blog/40
+# @Url     : http://www.17python.com/blog/41
 # @Details : Python中创建TCP服务器与客户端进行通信(中)Tk、thread与socket组合。
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1

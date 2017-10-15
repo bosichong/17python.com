@@ -3,14 +3,14 @@
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
-# @Title   : 浅谈Python中的协程及利用协和代替线程及进程并发编程。
+# @Title   : 浅谈Python中的协程及利用协程代替多线程及多进程并发编程。
 # @Url     : http://www.17python.com/blog/43
-# @Details : 浅谈Python中的协程及利用协和代替线程及进程并发编程。
+# @Details : 浅谈Python中的协程及利用协程代替多线程及多进程并发编程。
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1
 #            VSCode 1.15.1
 ###################################
-# 浅谈Python中的协程及利用协和代替线程及进程并发编程。
+# 浅谈Python中的协程及利用协程代替多线程及多进程并发编程。
 ###################################
 
 '''

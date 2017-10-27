@@ -54,7 +54,6 @@ c1.send(10)
 通过运行结果我们可以到最后抛出了一个异常`StopIteration`,结束了这个协程。我们可以考虑一下：用装饰器省略掉next()这步，然后捕获抛出的异常，优雅的关闭掉协程函数。
 '''
 from functools import wraps
-
 def coroutine(func):
     @wraps(func)
     def primer(*args, **kwargs):
@@ -62,14 +61,12 @@ def coroutine(func):
         next(gen)
         return gen
     return primer
-
 @coroutine
 def cd2():
     n = yield
     while n > 0:
         print("Counting down from %s" % n)
         n -= 1
-
 try:
     cd2().send(10)
 except Exception as e:
@@ -140,6 +137,6 @@ if __name__ == '__main__':
     main()
 
 '''
-上边这组代码稍稍有点乱，如果你想了解协程，就仔细看下，对比一下结果，你会发现虽然后边执行的代码没有利用多线程，但打印结果上的时间和多线程的执行结果是一样的。
+上边这组代码稍稍有点乱，可能你需要认真的理下思绪，对比一下结果，你会发现虽然后边执行的代码没有利用多线程，但打印结果上的时间和多线程的执行结果是一样的。
 这就是协程的魅力所在，一条线程搞定多线程任务。
 '''

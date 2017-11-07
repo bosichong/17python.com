@@ -29,12 +29,11 @@
     import a.a
     a.print_text()
 
+ModuleNotFoundError: No module named 'a'  很显然这样是找不到正确目录的，那么问题来了，
+如果是在同一目录，我们直接`import a`就搞定了，但实际工作中我们不可能把所有文件都放在一个目录中，如果需要导入其它目录的中.py文件，这时我们就需要用到`sys.path.append()`
+
+
 '''
-
-
-# ModuleNotFoundError: No module named 'a'  很显然这样是找不到正确目录的，那么问题来了，
-#如果是在同一目录，我们直接`import a`就搞定了，但实际工作中我们不可能把所有文件都放在一个目录中，如果需要导入其它目录的中.py文件，这时我们就需要用到`sys.path.append()`
-
 import sys
 print(sys.path)
 
@@ -75,11 +74,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))#获取根
 print(os.path.abspath(__file__))
 print(os.path.dirname(os.path.abspath(__file__)))
 print(BASE_DIR)
-
 T_DIR = os.path.join(BASE_DIR,'a')#拼装工具类地址
 print(T_DIR)
 sys.path.append(T_DIR)
 import a
-
 print(a.M_TEST)
 a.print_text()

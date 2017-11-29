@@ -5,12 +5,22 @@
     <title>Home Page</title>
 </head>
 <body>
-    {% comment %} 变量输出 {% endcomment %}
+    <!-- {% comment %} 变量输出 {% endcomment %}
     <h1>{{ s }}</h1>
-    <br/> {% comment %} 循环输出list {% endcomment %} {% for i in l %} {{ i }} {% endfor %}
+
     <br/> {% comment %} 字典输出 {% endcomment %} {{ info_dict.h }} {{ info_dict.w }}
     <br/> {% comment %} 循环输出字典 {% endcomment %} {% for key, value in info_dict.items %} {{ key }} : {{ value }} 
     {% endfor %}
-<h1><a href="{% url 'blog:home' %}">测试</a></h1>
+<h1><a href="{% url 'blog:home' %}">测试</a></h1> -->
+
+
+
+
+{% for art in articles %} 
+    {{ art.id }}.{{ art.title }} -- {{ art.category }}<br>
+    {{ art.content }}<br>
+    ------------------------------------------------------<br>
+{% endfor %}
+
 </body>
 </html>

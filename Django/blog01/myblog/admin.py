@@ -7,7 +7,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('id','title',)
 
 class ArticleAadmin(admin.ModelAdmin):
-    list_display = ('id','title','content',)
+    list_display = ('title','content',)
 
 admin.site.register(Category,CategoryAdmin)
 admin.site.register(Article, ArticleAadmin)

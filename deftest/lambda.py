@@ -14,8 +14,13 @@
 # 函数的定义，Python 定义函数使用 def 关键字
 ###################################
 def hello():
-    '''定义一个hello打印的函数'''
+    '''定义一个hello打印的函数，\n
+    返回字符串'''
     return 'hello world'
+
+
+
+
 # 使用函数
 print(hello())
 

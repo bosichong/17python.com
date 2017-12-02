@@ -123,3 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# #启用扩展后的user表
+AUTH_USER_MODEL = 'myblog.UserProfile'

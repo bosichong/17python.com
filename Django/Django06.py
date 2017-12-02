@@ -4,7 +4,7 @@
 # @Mail    : bosichong@qq.com
 # @Site    : www.17python.com
 # @Title   : # 实战：利用Django开发部署自己的个人博客（6）Django整合前端框架Amaze UI
-# @Url     : http://www.17python.com/blog/57
+# @Url     : http://www.17python.com/blog/58
 # @Details : # 实战：利用Django开发部署自己的个人博客（6）Django整合前端框架Amaze UI
 # @Other   : OS X 10.11.6 
 #            Python 3.6.1

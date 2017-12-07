@@ -23,3 +23,12 @@ def blog(request,id):
     #传递数据到模板。
     return render(request, 'blog.html', {'article':article,})
 
+
+def list(request):
+    '''blog列表页'''
+    #返回所有日志列表，以创建时间排序。
+    articles = Article.objects.all().order_by('-create_time')
+    print(articles)
+    #把调用的数据传递给模板
+    return render(request, 'list.html', {'articles':articles,})
+

@@ -93,9 +93,9 @@
       </li>
     </ul>
 
-    <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right" role="search">
+    <form class="am-topbar-form am-topbar-left am-form-inline am-topbar-right"  action="{% url '' %}">
       <div class="am-form-group">
-        <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章">
+        <input type="text" class="am-form-field am-input-sm" placeholder="搜索文章" name="s">
       </div>
       <button type="submit" class="am-btn am-btn-default am-btn-sm">搜索</button>
     </form>
@@ -134,9 +134,10 @@
 
 </div>
 <footer class="blog-footer">
-    <small>© Copyright 2017. by 17python.com</small>
+    <small>© Copyright 2017. by 17python.com </small>
   </p>
 </footer>
+
 
 <!--[if lt IE 9]>
 <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>

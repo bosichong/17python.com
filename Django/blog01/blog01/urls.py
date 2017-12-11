@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blog/', include('myblog.urls',namespace='blog')),
+    # url(r'^blog/', include('myblog.urls',namespace='blog')),
+    url(r'^', include('myblog.urls',namespace='')),#修改为直接为域名根目录，缩短网址。
 ]

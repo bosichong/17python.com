@@ -2,6 +2,8 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.db.models import Q#模糊查询多个字段使用
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger#翻页相关模块
+
 
 from .forms import Searchform
 
@@ -50,6 +52,20 @@ def list(request):
         articles = articles.filter(Q(title__contains=s)|Q(content__contains=s)).order_by('-create_time')
     # print(c)
     # print(articles)
+    ############################
+    #翻页视图中代码
+    ############################
+    paginator = Paginator(articles, 3)#创建Paginator
+    page = request.GET.get('p')#获取当前页码
+    try:
+        contacts = paginator.page(page)#取得当前页码所包含的数据
+    except PageNotAnInteger:
+        contacts = paginator.page(1)#若不是整数，跳转到第一页。
+    except EmptyPage:
+        contacts = paginator.page(paginator.num_pages)#若超过了最后一页
+    #############################
+
+    
     #把调用的数据传递给模板
-    return render(request, 'list.html', {'articles':articles,})
+    return render(request, 'list.html', {'articles':articles, 'contacts':contacts,})
 

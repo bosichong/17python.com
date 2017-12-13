@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block site_title %}MyDjangoBlog~~~~~{% endblock site_title %}
 {% block article %} 
-{% for article in articles %}
+{% for article in contacts %}
 <article class="blog-main">
     <h3 class="am-article-title">
       <a href="#">{{ article.title }}</a>
@@ -14,7 +14,26 @@
   </article>
   <hr class="am-article-divider blog-hr">
 {% endfor %}
+
+
+
+
+<!-- 翻页  -->
+<div class="am-pagination am-pagination-centered">
+      {% if contacts.has_previous %}
+          <li class=""><a href="?p={{ contacts.previous_page_number }}">&laquo; 上一页</a></li>
+      {% endif %}
+      {% for p in contacts.paginator.page_range %}   
+         <li class="{% if p == page_number %}am-active{% endif %}"><a href="?p={{ p }}">{{ p }}</a></li>
+      {% endfor %}
+      {% if contacts.has_next %}
+          <li class=""><a href="?p={{ contacts.next_page_number }}">下一页 &raquo;</a></li>
+      {% endif %}
+</div>
+
+
 {% endblock article %}
+
 
 
 

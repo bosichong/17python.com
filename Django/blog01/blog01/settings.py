@@ -128,3 +128,7 @@ STATICFILES_DIRS = [
 
 # #启用扩展后的user表
 AUTH_USER_MODEL = 'myblog.UserProfile'
+
+#设置上传文件目录
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -15,9 +15,17 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from blog01.settings import MEDIA_ROOT
+from django.views.static import serve
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     # url(r'^blog/', include('myblog.urls',namespace='blog')),
     url(r'^', include('myblog.urls',namespace='')),#修改为直接为域名根目录，缩短网址。
+
+    #配置上传文件的访问处理函数
+    # 需要引入
+    # from MyBlog.settings import MEDIA_ROOT
+    # from django.views.static import serve
+    url(r'^media/(?P<path>.*)$',  serve, {"document_root":MEDIA_ROOT}, name='media'),
 ]

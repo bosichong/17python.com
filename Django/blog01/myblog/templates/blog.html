@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load mytags %}
 {% block site_title %}{{ article.title }}{% endblock site_title %}
 {% block article %} 
 <article class="blog-main">
@@ -8,7 +9,9 @@
     <h4 class="am-article-meta blog-meta">发布时间：2014/06/17</h4>
     <p>作者：{{ article.user.nick_name }} 分类：{{ article.category }}</p>
     <div class="am-g blog-content">
-    {{ article.content }}
+      {% autoescape off %}
+        {{ article.content|toMarkdown }}
+      {% endautoescape %}
     </div>
   </article>
 {% endblock article %}

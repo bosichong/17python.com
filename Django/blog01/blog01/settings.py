@@ -132,3 +132,12 @@ AUTH_USER_MODEL = 'myblog.UserProfile'
 #设置上传文件目录
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# #服务器部署设置网站后ADMIN目录
+# STATICFILES_DIRS = [
+#     "/usr/local/lib/python3.5/dist-packages/django/contrib/admin/static",
+# ]
+# #服务器部署时修改为静态文件存放目录
+# STATIC_ROOT = "/home/www/blog01/static/"

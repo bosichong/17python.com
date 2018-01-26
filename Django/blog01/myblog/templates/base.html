@@ -1,3 +1,4 @@
+{% load mytags %}
 <!DOCTYPE html>
 <html>
 <head lang="en">
@@ -121,7 +122,11 @@
         <div class="am-panel-hd">文章目录</div>
         <ul class="am-list blog-list">
           {% for categort in categorts %}
-          <li><a href="#">{{ categort.title }}</a></li>
+          <li><a href="#">{{ categort.title }}
+              <!-- 统计分类下文章数 -->
+           <span class="am-badge am-align-right">{{ categort.id|cat_count  }}</span>
+          </a>
+          </li>
           {% endfor %}
         </ul>
       </section>

@@ -10,10 +10,10 @@
 #            Python 3.6.1
 #            VSCode 1.15.1
 # print(len('你好'))
-class Hello:
+
+
+class HelloWorld:
     def __init__(self):
         print('hello world')
-Hello()
 
-for i in range(10):
-    print(i, end=' ')
+HelloWorld()

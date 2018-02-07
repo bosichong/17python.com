@@ -5,7 +5,7 @@ from django.db.models import Q#模糊查询多个字段使用
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger#翻页相关模块
 
 
-from .forms import Searchform
+from .forms import Searchform, Tagform
 
 #导入数据模型
 from .models import Article
@@ -41,6 +41,13 @@ def list(request):
         #搜索分类ID为c的所有文章，如果分类id为空，这里就返回所有文章。
         articles = articles.filter(category=c,).order_by('-create_time')
 
+
+    t = ''  # TAG关键字
+    if request.method == 'GET':
+        form = Tagform(request.GET)
+        if form.is_valid():
+            t =request.GET.get('t')
+
     #搜索结果数据
     s = ''#搜索关键字
     #以下判断表单是否验证成功，如果验证成功返回一个字符串s
@@ -50,6 +57,9 @@ def list(request):
             s = request.GET.get('s')
     if s :
         articles = articles.filter(Q(title__contains=s)|Q(content__contains=s)).order_by('-create_time')
+    elif t:
+        # 标签页搜索结果
+        articles = articles.filter(tag__contains=t,).order_by('-create_time')  # name__contains 模糊查找字段
     # print(c)
     # print(articles)
     ############################

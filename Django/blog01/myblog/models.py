@@ -47,6 +47,7 @@ class Article(models.Model):
     article_synopsis = models.TextField(verbose_name=u'日志简介', default='')
     content = models.TextField(verbose_name = '博客正文', default = '')
     category = models.ForeignKey(Category, verbose_name = '所属分类', default = '')
+    tag = models.CharField(max_length=50, verbose_name=u'日志标签', default='')
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='文章作者', null=True, blank=True)
     #文章创建时间，这里的auto_now_add=True表示自动在数据库里创建时间。
     create_time = models.DateTimeField(verbose_name='文章创建时间', auto_now_add=True,)

@@ -131,6 +131,18 @@
         </ul>
       </section>
 
+
+
+      <!-- 标签云 -->
+      <section class="am-panel am-panel-default">
+        <div class="am-panel-hd">标签云</div>
+        <div class="am-panel-bd">
+          {% for tag in tags %}
+          <a href="{% url '' %}?t={{ tag }}" class="am-badge {{ tagcss | random }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      </section>
+
     </div>
   </div>
 

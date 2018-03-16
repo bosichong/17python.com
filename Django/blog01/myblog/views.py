@@ -79,3 +79,13 @@ def list(request):
     #把调用的数据传递给模板
     return render(request, 'list.html', {'articles':articles, 'contacts':contacts,})
 
+
+# robots
+def robots(request):
+    return HttpResponse('User-agent: *')
+
+# sitemap 文件生成
+def sitemap(request):
+    articles = Article.objects.all().order_by('-create_time')
+    return render(request, 'sitemap.xml', {'articles':articles}, content_type="text/xml")
+

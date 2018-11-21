@@ -49,6 +49,7 @@ def cdef():
 def rdoprt():
     print(v.get())
     r_frame['bg']=v.get()
+
 root = tk.Tk()
 root.title("Checkbutton和Radiobutton")
 
@@ -83,6 +84,17 @@ MODES = [
 for text, mode in MODES:
         b = tk.Radiobutton(r_frame, text=text,variable=v, value=mode,command=rdoprt)
         b.pack(anchor=tk.W)
+
+
+# comvalue = tk.StringVar()  # 窗体自带的文本，新建一个值
+# comboxlist = ttk.Combobox(c_frame, textvariable=comvalue,state='readonly')  # 初始化
+# comboxlist["values"] = ("加法", "减法", "乘法", "除法")
+# comboxlist.current(0)  # 选择第一个
+# comboxlist.bind("<<ComboboxSelected>>", go)  # 绑定事件,(下拉列表框被选中时，绑定go()函数)
+# comboxlist.pack()
+# print(comboxlist.get())
+
+
 
 root.mainloop()
 

@@ -19,3 +19,11 @@ class HelloWorld:
 
 HelloWorld()
 
+k = 0
+
+for i in range(100):
+    for i in range(5):
+        print(k+i)
+    k = k+1
+    print()
+

@@ -1,4 +1,4 @@
-#codeing=utf-8
+# codeing=utf-8
 # @Time    : 2017-09-29
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
@@ -6,7 +6,7 @@
 # @Title   : python面向对象编程（OOP）初探
 # @Url     : http://www.17python.com/
 # @Details : python面向对象编程（OOP）初探
-# @Other   : OS X 10.11.6 
+# @Other   : OS X 10.11.6
 #            Python 3.6.1
 #            VSCode 1.15.1
 ###################################
@@ -34,27 +34,32 @@
 
 '''
 
+
 def run():
     print("我会跑！")
 
+
 class Animal(object):
-    k = 0#类属性
-    def __init__(self,name):#类构造器
-        self.name = name#实例的属性
-    #实例的方法
+    k = 0  # 类属性
+
+    def __init__(self, name):  # 类构造器
+        self.name = name  # 实例的属性
+    # 实例的方法
+
     def say(self):
         Animal.k += 1
         print("{0}:我会呼吸！".format(self.name))
         print("Animal.k={0}".format(Animal.k))
 
+
 a = Animal("aaaa")
-a.say()#执行实例的方法
-print("Animal.k:{0}".format(Animal.k))#打印类属性
+a.say()  # 执行实例的方法
+print("Animal.k:{0}".format(Animal.k))  # 打印类属性
 print(Animal.__init__)
 print(Animal.say)
 Animal.m = 1
-a.color = "red" #动态的添加属性
-a.run = run()#动态的添加属性
+a.color = "red"  # 动态的添加属性
+a.run = run()  # 动态的添加属性
 print("我的颜色是=%s" % a.color)
 print("Animal.m=%s" % Animal.m)
 print("a.m=%s" % a.m)
@@ -75,19 +80,22 @@ Python中的实例对象可以动态的添加类变量及实例变量，只需�
 Python中，类的继承很简单方便，看下下边的代码
 '''
 
+
 class Dog(Animal):
-    k = 999 #我们定义了一个与父类相同的类变量
-    def __init__(self,name):#同样定义了一个相同名称的实例变量
-        Animal.__init__(self,name)#注意这里没有:::::号
+    k = 999  # 我们定义了一个与父类相同的类变量
+
+    def __init__(self, name):  # 同样定义了一个相同名称的实例变量
+        Animal.__init__(self, name)  # 注意这里没有:::::号
 
     def say(self):
-        print(self.name+":我的叫声是：汪汪汪！")
+        print(self.name + ":我的叫声是：汪汪汪！")
         print("Dog.k={0}".format(Dog.k)),
+
 
 dog = Dog("wangwang")
 dog.say()
-print("Animal.k:{0}".format(Animal.k))#打印父类属性
-print("Dog.k:{0}".format(Dog.k))#打印子类属性
+print("Animal.k:{0}".format(Animal.k))  # 打印父类属性
+print("Dog.k:{0}".format(Dog.k))  # 打印子类属性
 # dog.run #这个动态添加到父类创建的实例中的变量是无法继承过来的。 非得执行的话会报错。
 
 '''
@@ -100,12 +108,14 @@ print("Dog.k:{0}".format(Dog.k))#打印子类属性
 我们在创建一个新类继承`Animal`
 '''
 
+
 class Cat(Animal):
-    def __init__(self,name):
-        Animal.__init__(self,name)
-    
+    def __init__(self, name):
+        Animal.__init__(self, name)
+
     def say(self):
-        print(self.name+":我的叫声是：喵喵喵")
+        print(self.name + ":我的叫声是：喵喵喵")
+
 
 cat = Cat("Tom")
 cat.say()
@@ -115,10 +125,10 @@ cat.say()
 
 '''
 
-print(isinstance(cat,Cat))#True
-print(isinstance(cat,Animal))#True
-print(isinstance(a,Animal))#True
-print(isinstance(a,Cat))#False
+print(isinstance(cat, Cat))  # True
+print(isinstance(cat, Animal))  # True
+print(isinstance(a, Animal))  # True
+print(isinstance(a, Cat))  # False
 
 '''
 很明显，动物的对象不能说成是猫，但猫的对象可以是猫类，说猫是动物类也没什么错误。也就是说，继承是从上到下。
@@ -126,12 +136,14 @@ print(isinstance(a,Cat))#False
 
 '''
 
+
 def isay(animal):
     animal.say()
 
-isay(a)#aaaa:我会呼吸！
-isay(dog)#wangwang:我的叫声是：汪汪汪！
-isay(cat)#Tom:我的叫声是：喵喵喵
+
+isay(a)  # aaaa:我会呼吸！
+isay(dog)  # wangwang:我的叫声是：汪汪汪！
+isay(cat)  # Tom:我的叫声是：喵喵喵
 
 '''
 通过`isay()`方法的输出，我们多少对多态这个概念有那么一点了解了，回想当年学Java的多态的时候，和现在的情况大同小异乎？
@@ -142,4 +154,3 @@ isay(cat)#Tom:我的叫声是：喵喵喵
 好吧，有关Python类，对象相关先说到这里，希望大家国庆节快乐哦！
 
 '''
-

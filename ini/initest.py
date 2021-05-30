@@ -12,7 +12,10 @@
 import os
 from configparser import ConfigParser
 ###################################
-# .ini 文件是Initialization File的缩写，即初始化文件，是windows的系统配置文件所采用的存储格式，统管windows的各项配置，一般用户就用windows提供的各项图形化管理界面就可实现相同的配置了。但在某些情况，还是要直接编辑ini才方便，一般只有很熟悉windows才能去直接编辑。
+# .ini 文件是Initialization File的缩写，
+# 即初始化文件，是windows的系统配置文件所采用的存储格式，
+# 统管windows的各项配置，一般用户就用windows提供的各项图形化管理界面就可实现相同的配置了。
+# 但在某些情况，还是要直接编辑ini才方便，一般只有很熟悉windows才能去直接编辑。
 ###################################
 def readINI(file_path):
     """ ini文件读取，返回一个INI配置对象 """

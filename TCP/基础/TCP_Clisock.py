@@ -14,16 +14,16 @@
 ###################################
 from socket import *
 HOST = '127.0.0.1'
-PORT = 6666
+PORT = 8888
 BUFSIZ = 1024
 ADDR = (HOST,PORT)
 # 创建客户端，并连接服务器
-tcpCliSock = socket(AF_INET, SOCK_STREAM)
+tcpCliSock = socket()
 tcpCliSock.connect(ADDR)
 
 while True:
     data = input("> ")
-    tcpCliSock.send(data.encode('utf-8'))
+    tcpCliSock.sendall(data.encode('utf-8'))
     if 'exit' == data :break
     data = tcpCliSock.recv(BUFSIZ)
     print(data.decode())

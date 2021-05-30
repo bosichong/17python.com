@@ -1,29 +1,87 @@
-#codeing=utf-8
-# @Time    : 2017-09-01
-# @Author  : J.sky
-# @Mail    : bosichong@qq.com
-# @Site    : www.17python.com
-# @Title   : Python3学习
-# @Url     : http://www.17python.com/
-# @Details : python3学习中的一些记录与心得
-# @Other   : OS X 10.11.6 
-#            Python 3.6.1
-#            VSCode 1.15.1
-# print(len('你好'))
 
-from PIL import Image, ImageFilter
 
-class HelloWorld:
-    def __init__(self):
-        print('hello world')
+'''
+环境配置
+IDE vscode pycharm
 
-HelloWorld()
+代码仓库 github gitee
 
-k = 0
+python 官方文档中文 
+https://docs.python.org/zh-cn/3.8/
 
-for i in range(100):
-    for i in range(5):
-        print(k+i)
-    k = k+1
-    print()
+程序的基本编写方法 IPO
+
+I:Input 输入，程序的输入，数据机构。
+P:Process 处理 程序的主要逻辑，算法。
+O:Output 输出，程序的输出。
+
+
+print([n*n for n in range(1,9)]) 列表推导
+(n*n for n in range(9)) 生成器表达式
+
+
+函数的复用
+
+
+
+
+'''
+
+# def getadd():
+#     return 
+
+# def add():
+#     pass
+
+# add()
+
+
+
+# def fact(n):
+#     if n==1:
+#         return 1
+#     return n * fact(n - 1)
+
+# print(fact(2))
+
+
+
+# 斐波那契数
+a, b = 0, 1
+while b < 20:
+    print(b)
+    a, b = b, a+b
+
+
+
+
+import threading
+import time
+def pp(key):
+    while True:
+        print(key)
+        time.sleep(1)
+
+
+t1 = threading.Thread(target=pp,args=("haha",))
+t1.start()
+
+t2 = threading.Thread(target=pp,args=("lailai",))
+t2.start()
+
+
+# a,b = map(int,input("请输入两个值','号分隔：").split(','))
+
+# print(a+b)
+
+# class Person():
+#     def __init__(self,name,age):
+#         self.name = name
+#         self.age = age
+
+#     def say(self):
+#         print("我叫{},我已经{}".format(self.name,self.age))
+
+# p = Person("张三",18)
+# p.say()
 

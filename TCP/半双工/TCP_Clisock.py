@@ -14,7 +14,7 @@
 ###################################
 from socket import *
 HOST = '127.0.0.1'
-PORT = 6666
+PORT = 8888
 BUFSIZ = 1024
 ADDR = (HOST,PORT)
 # 创建客户端，并连接服务器
@@ -26,8 +26,8 @@ while True:
     tcpCliSock.send(data.encode('utf-8'))
     if 'exit' == data :break
     while True:
-        data = tcpCliSock.recv(BUFSIZ)
+        data = tcpCliSock.recv(BUFSIZ).decode()
         if data:
-            print(data.decode())
+            print(data)
             break
 tcpCliSock.close()

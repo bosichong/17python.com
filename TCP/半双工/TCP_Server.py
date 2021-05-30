@@ -17,7 +17,7 @@ from socket import *
 from time import ctime
 
 HOST = '127.0.0.1'
-PORT = 6666
+PORT = 8888
 BUFSIZ = 1024
 ADDR = (HOST, PORT)# IP 端口
 
@@ -33,7 +33,8 @@ while True:
     while True:
         data = tcpCliSock.recv(BUFSIZ)#接收客户端发来的数据
         print(data.decode())
-        if 'exit' == data.decode():break
+        if 'exit' == data.decode():
+            break
         if data:
             data = input("> ")
             data = "{0}".format(ctime())+" "+data

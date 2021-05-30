@@ -12,25 +12,36 @@
 ###################################
 # Python生成器yield应用实例——监控日志
 ###################################
-    import time
+import time
 
-    def tail(f):
-        f.seek(0,2)#移动到文件尾部。
-        while True:
-            line = f.readline()
-            if not line :
-                time.sleep(1)
-                continue
-            yield line
+def tail(f):
+    '''
 
-    def grep(lines):
-        for l in lines:
-            k = int(l.split()[2])
-            if k >50000:
-                yield l
+    :param f:
+    :return: <class 'generator'>
+    '''
+    f.seek(0,2)#移动到文件尾部。
+    while True:
+        line = f.readline()
+        if not line :
+            time.sleep(1)
+            continue
+        yield line
 
-    serverlog = tail(open('server_log.log'))
-    lines = grep(serverlog)
+def grep(lines):
+    '''
 
-    for line in lines:
-        print(line)
+    :param lines:
+    :return: <class 'generator'>
+    '''
+    for l in lines:
+        k = int(l.split()[2])
+        if k >50000:
+            yield l
+
+serverlog = tail(open('server_log.log'))
+lines = grep(serverlog)
+print(type(lines))
+for line in lines:
+    print("发现异常：")
+    print(line)

@@ -65,7 +65,7 @@ from socket import *
 from time import ctime
 
 HOST = '127.0.0.1'
-PORT = 6666
+PORT = 8888
 BUFSIZ = 1024
 ADDR = (HOST, PORT)# IP 端口
 

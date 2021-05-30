@@ -1,175 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ecf84df-9254-4ed1-aaf8-e951adadeacc" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/TCP/socketserver/skserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.project" beforeDir="false" afterPath="$PROJECT_DIR$/.project" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.pydevproject" beforeDir="false" afterPath="$PROJECT_DIR$/.pydevproject" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django01.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django01.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django02.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django02.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django03.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django03.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django04.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django04.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django05.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django05.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django06.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django06.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django07.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django07.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django08.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django08.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django09.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django09.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django10.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django10.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django11.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django11.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django12.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django12.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django13.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django13.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django14.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django14.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django15.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django15.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django16.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django16.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django17.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django17.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/Django18.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/Django18.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/blog01/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/blog01/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/blog01/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/blog01/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/blog01/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/blog01/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/blog01/wsgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/blog01/wsgi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/db11.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/db11.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/media/upload/2017/12/bosi.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/media/upload/2017/12/bosi.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/apps.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/apps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/blog_context.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/blog_context.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0002_auto_20171202_0227.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0002_auto_20171202_0227.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0003_blogimage.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0003_blogimage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0004_article_tag.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/migrations/0004_article_tag.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/migrations/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templates/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templates/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templates/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templates/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templates/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templates/sitemap.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templatetags/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templatetags/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/templatetags/mytags.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/templatetags/mytags.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/myblog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/myblog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2.zip" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-404.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-form.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-gallery.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-gallery.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-help.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-help.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-log.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-log.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-table.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-user.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/admin-user.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/admin.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/admin.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.flat.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.flat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.flat.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.flat.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/amazeui.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/app-icon72x72@2x.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-chrome.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-chrome.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-firefox.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-firefox.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-ie.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-ie.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-opera.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-opera.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-safari.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/admin-safari.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/adminPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/adminPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/blogPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/blogPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/landing.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/landing.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/landingPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/landingPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/loginPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/loginPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/sidebarPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/examples/sidebarPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/favicon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/favicon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/startup-640x1096.png" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/i/startup-640x1096.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.ie8polyfill.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.ie8polyfill.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.ie8polyfill.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.ie8polyfill.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.widgets.helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.widgets.helper.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.widgets.helper.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/amazeui.widgets.helper.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/handlebars.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/assets/js/handlebars.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/blog.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/blog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/iscroll.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/iscroll.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/landing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/landing.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/non-responsive.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/non-responsive.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/sidebar.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/widget.basic.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/widget.basic.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/widget.html" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/AmazeUI-2.7.2/widget.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Django/blog01/static/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Django/blog01/static/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/classstatictest.py" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/classstatictest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OOP/classtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/OOP/classtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ReviewPython.py" beforeDir="false" afterPath="$PROJECT_DIR$/ReviewPython.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/tcp.drawing" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/tcp.drawing" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/半双工/TCP_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/半双工/TCP_Clisock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/半双工/TCP_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/半双工/TCP_Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/基础/TCP_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/基础/TCP_Clisock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/基础/TCP_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/基础/TCP_Server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/a/a.py" beforeDir="false" afterPath="$PROJECT_DIR$/a/a.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b/b.py" beforeDir="false" afterPath="$PROJECT_DIR$/b/b.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/copy/copytest.py" beforeDir="false" afterPath="$PROJECT_DIR$/copy/copytest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/counttest.py" beforeDir="false" afterPath="$PROJECT_DIR$/counttest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/datetime/datetimetest.py" beforeDir="false" afterPath="$PROJECT_DIR$/datetime/datetimetest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/closuretest.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/closuretest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/lambda.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/lambda.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/quicksort.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/quicksort.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/server_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/server_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/server_log.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/server_log.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/tail.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/tail.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/yieldtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/yieldtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deftest/yieldtest2.py" beforeDir="false" afterPath="$PROJECT_DIR$/deftest/yieldtest2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/git/git多人协作" beforeDir="false" afterPath="$PROJECT_DIR$/git/git多人协作" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/Scaletest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/Scaletest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/ScrollbarTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/ScrollbarTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/bindtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/bindtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/btn.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/btn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/filedialogtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/filedialogtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/frametest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/frametest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/listbox.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/listbox.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/menutest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/menutest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/texttest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/texttest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gui/tkMessageBoxTest.py" beforeDir="false" afterPath="$PROJECT_DIR$/gui/tkMessageBoxTest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ini/config.ini" beforeDir="false" afterPath="$PROJECT_DIR$/ini/config.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ini/initest.py" beforeDir="false" afterPath="$PROJECT_DIR$/ini/initest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/17python.txt" beforeDir="false" afterPath="$PROJECT_DIR$/io/17python.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/fileopentest.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/fileopentest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/ospathabspath.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/ospathabspath.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/io/ospathtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/ospathtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ipythontest.py" beforeDir="false" afterPath="$PROJECT_DIR$/ipythontest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/Consumer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/Consumer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/God.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/God.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/Producer.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/Producer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/processtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/processtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/思维导图.drawing" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/思维导图.drawing" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/random/randomtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/random/randomtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/re/cj.py" beforeDir="false" afterPath="$PROJECT_DIR$/re/cj.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/re/requesttest.py" beforeDir="false" afterPath="$PROJECT_DIR$/re/requesttest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/re/retest.py" beforeDir="false" afterPath="$PROJECT_DIR$/re/retest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite3/memorandum.db" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3/memorandum.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sqlite3/sqlite3test.py" beforeDir="false" afterPath="$PROJECT_DIR$/sqlite3/sqlite3test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/str/formatstr.py" beforeDir="false" afterPath="$PROJECT_DIR$/str/formatstr.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thread/threadlock.py" beforeDir="false" afterPath="$PROJECT_DIR$/thread/threadlock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thread/threadtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/thread/threadtest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/thread/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/thread/utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="7ecf84df-9254-4ed1-aaf8-e951adadeacc" name="Default" comment="测试了socketserver的测试" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -486,6 +318,14 @@
       <option name="presentableId" value="Default" />
       <updated>1513835240753</updated>
     </task>
+    <task id="LOCAL-00001" summary="测试了socketserver的测试">
+      <created>1622384768672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622384768672</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView">
@@ -530,12 +370,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="测试了socketserver的测试" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试了socketserver的测试" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/thread/threadlock.py">

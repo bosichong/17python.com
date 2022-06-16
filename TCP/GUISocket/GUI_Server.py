@@ -60,7 +60,7 @@ class Gui_Server:
         构建GUI
         '''
         self.root = tk.Tk()#整个服务器的窗口
-        self.root.title("Python大佬聊天室服务器管理器 1.0 By py_sky 学习交流群：217840699")
+        self.root.title("Python江湖大佬聊天室服务器管理器 1.0 By py_sky 学习交流群：217840699")
         self.info_frame = tk.Frame(self.root)#存放用户列表，聊天室交流信息部件
         self.info_frame.pack(fill=tk.X, side=tk.TOP)
         self.server_frame = tk.LabelFrame(self.root,text="聊天室设置", padx=5, pady=5)#存放聊天室服务器设置相关信息部件，服务器启动，暂停按钮。
@@ -73,7 +73,7 @@ class Gui_Server:
 
         #创建打印聊天信息的text
         self.out = tk.Text(self.info_frame,width=80,font=("Symbol", 14))
-        self.out.insert(tk.END, "欢迎光临Python江湖聊天室！ \n")
+        self.out.insert(tk.END, "欢迎光临Python江湖大佬聊天室！ \n")
         self.out.pack(fill=tk.Y, side = tk.LEFT)
 
 

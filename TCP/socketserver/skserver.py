@@ -12,9 +12,10 @@ class MySocketServer(socketserver.BaseRequestHandler):
             self.data = self.request.recv(1024).decode().strip()
             print(self.data)
             self.request.sendall("{}:{}".format(ctime(),self.data.upper()).encode('utf-8'))
-        # if self.data == 'exit':
-        #     self.request.sendall("服务器已关闭".encode('utf-8'))
-        #     self.server.server_close()
+            if self.data == 'serverexit':
+                self.request.sendall("服务器已关闭".encode('utf-8'))
+                break
+        self.request.close()
 
 
 if __name__ == '__main__':

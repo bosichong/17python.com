@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ecf84df-9254-4ed1-aaf8-e951adadeacc" name="Default" comment="测试了socketserver的测试">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/OOP/classtest1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TCP/httptest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/log/logtest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyunittest/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pyunittest/mytest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/算法/algorithm.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/算法/test_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PythonStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonStudy.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/socketserver/skserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/socketserver/skserver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +46,8 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/anaconda3/envs/learn/lib/python3.8/http/server.py" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/anaconda3/envs/learn/lib/python3.8/socketserver.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/anaconda3/envs/learn/lib/python3.8/http/server.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -165,7 +156,29 @@
       <recent name="$PROJECT_DIR$/Django" />
     </key>
   </component>
-  <component name="RunManager" selected="Python 测试.mytest.Test.test_case2 的 Unittest">
+  <component name="RunManager" selected="Python.GUI_Server">
+    <configuration name="GUI_Server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TCP/GUISocket" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,28 +215,6 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/算法" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/算法/test_main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -294,19 +285,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python.test_main" />
       <item itemvalue="Python 测试.mytest.TestStringMethods.test_isupper 的 Unittest" />
       <item itemvalue="Python 测试.mytest.Test 的 Unittest" />
       <item itemvalue="Python 测试.mytest.Test.test_case2 的 Unittest" />
       <item itemvalue="Python 测试.mytest.Test.test_case3 的 Unittest" />
+      <item itemvalue="Python.GUI_Server" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.GUI_Server" />
         <item itemvalue="Python 测试.mytest.Test.test_case2 的 Unittest" />
         <item itemvalue="Python 测试.mytest.Test 的 Unittest" />
         <item itemvalue="Python 测试.mytest.Test.test_case3 的 Unittest" />
         <item itemvalue="Python 测试.mytest.TestStringMethods.test_isupper 的 Unittest" />
-        <item itemvalue="Python.test_main" />
       </list>
     </recent_temporary>
   </component>
@@ -322,6 +313,7 @@
       <option name="presentableId" value="Default" />
       <updated>1513835240753</updated>
       <workItem from="1625612721417" duration="1596000" />
+      <workItem from="1655471167130" duration="7337000" />
     </task>
     <task id="LOCAL-00001" summary="测试了socketserver的测试">
       <created>1622384768672</created>
@@ -394,6 +386,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case3__Unittest.coverage" NAME="mytest.Test.test_case3 的 Unittest 覆盖结果" MODIFIED="1625613441651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
+    <SUITE FILE_PATH="coverage/PythonStudy$GUI_Server.coverage" NAME="GUI_Server 覆盖结果" MODIFIED="1655511547222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test__Unittest.coverage" NAME="mytest.Test 的 Unittest 覆盖结果" MODIFIED="1625613447328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
     <SUITE FILE_PATH="coverage/PythonStudy$logtest.coverage" NAME="logtest 覆盖结果" MODIFIED="1625612757951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case2__Unittest.coverage" NAME="mytest.Test.test_case2 的 Unittest 覆盖结果" MODIFIED="1625753632793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />

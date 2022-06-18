@@ -1,4 +1,4 @@
-#codeing=utf-8
+# codeing=utf-8
 # @Time    : 2017-10-12
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
@@ -6,7 +6,7 @@
 # @Title   : Python中创建TCP服务器与客户端进行通信(中)Tk、thread与socket组合。
 # @Url     : http://www.17python.com/blog/41
 # @Details : Python中创建TCP服务器与客户端进行通信(中)Tk、thread与socket组合。
-# @Other   : OS X 10.11.6 
+# @Other   : OS X 10.11.6
 #            Python 3.6.1
 #            VSCode 1.15.1
 ###################################
@@ -40,93 +40,92 @@
 
 '''
 
-
-
-
+import socket
+import threading
+import time
 import tkinter as tk
-import threading, socket, time
+
 
 class Gui_Server:
     '''
     聊天室服务器端GUI构建
     '''
+
     def __init__(self):
         self.clist = {}  # 存放接入的socket客户端 以客户端用户名保存为字典
-        self.go()
-        
-    
-    def go(self):
-        '''
-        构建GUI
-        '''
-        self.root = tk.Tk()#整个服务器的窗口
+
+        self.root = tk.Tk()  # 整个服务器的窗口
         self.root.title("Python江湖大佬聊天室服务器管理器 1.0 By py_sky 学习交流群：217840699")
-        self.info_frame = tk.Frame(self.root)#存放用户列表，聊天室交流信息部件
+        self.info_frame = tk.Frame(self.root)  # 存放用户列表，聊天室交流信息部件
         self.info_frame.pack(fill=tk.X, side=tk.TOP)
-        self.server_frame = tk.LabelFrame(self.root,text="聊天室设置", padx=5, pady=5)#存放聊天室服务器设置相关信息部件，服务器启动，暂停按钮。
+        self.server_frame = tk.LabelFrame(
+            self.root, text="聊天室设置", padx=5, pady=5)  # 存放聊天室服务器设置相关信息部件，服务器启动，暂停按钮。
         self.server_frame.pack(fill=tk.X, side=tk.TOP)
 
-
-        #用户列表框
+        # 用户列表框
         self.lb = tk.Listbox(self.info_frame, width=20, selectmode=tk.EXTENDED)
-        self.lb.pack(fill=tk.Y, side= tk.LEFT)
+        self.lb.pack(fill=tk.Y, side=tk.LEFT)
 
-        #创建打印聊天信息的text
-        self.out = tk.Text(self.info_frame,width=80,font=("Symbol", 14))
+        # 创建打印聊天信息的text
+        self.out = tk.Text(self.info_frame, width=80, font=("Symbol", 14))
         self.out.insert(tk.END, "欢迎光临Python江湖大佬聊天室！ \n")
-        self.out.pack(fill=tk.Y, side = tk.LEFT)
+        self.out.pack(fill=tk.Y, side=tk.LEFT)
 
-
-
-        self.top_server = tk.Frame(self.server_frame,)
+        self.top_server = tk.Frame(self.server_frame, )
         self.top_server.pack(fill=tk.X, side=tk.TOP)
 
-        #设置IP文本框
+        # 设置IP文本框
         self.ip_var = tk.StringVar()
         self.ip_var.set('192.168.0.88')
-        self.ip_entry = tk.Entry(self.top_server, textvariable=self.ip_var, width=12)
-        self.ip_entry.pack(fill=tk.X,side=tk.LEFT)
-        #设置端口文本框 
+        self.ip_entry = tk.Entry(
+            self.top_server, textvariable=self.ip_var, width=12)
+        self.ip_entry.pack(fill=tk.X, side=tk.LEFT)
+        # 设置端口文本框
         self.port_var = tk.IntVar()
         self.port_var.set(18888)
-        self.port_entry = tk.Entry(self.top_server, textvariable=self.port_var,width=5)
+        self.port_entry = tk.Entry(
+            self.top_server, textvariable=self.port_var, width=5)
         self.port_entry.pack(side=tk.LEFT)
-        
-        self.start_btn = tk.Button(self.top_server,text="启动服务器", width=18, command=self.server_start).pack(side=tk.LEFT)
-        
-        self.down_server = tk.Frame(self.server_frame,)
+
+        self.start_btn = tk.Button(
+            self.top_server, text="启动服务器", width=18, command=self.server_start).pack(side=tk.LEFT)
+
+        self.down_server = tk.Frame(self.server_frame, )
         self.down_server.pack(fill=tk.X, side=tk.BOTTOM)
-        #聊天窗口
+        # 聊天窗口
         self.that_var = tk.StringVar()
         self.that_var.set('你好哈！！！！')
-        self.that = tk.Entry(self.down_server, textvariable=self.that_var, width=40)
+        self.that = tk.Entry(
+            self.down_server, textvariable=self.that_var, width=40)
         self.that.pack(fill=tk.X, side=tk.LEFT)
 
-        #信息发送按钮
-        self.end_btn = tk.Button(self.down_server,text="发送消息", width=18, command=self.sendMsg).pack(side=tk.LEFT)
+        # 信息发送按钮
+        self.end_btn = tk.Button(
+            self.down_server, text="发送消息", width=18, command=self.sendMsg).pack(side=tk.LEFT)
         self.root.mainloop()
 
     def server_start(self):
         '''
         启动服务器
         '''
-        self.t = TcpServer(self.ip_var.get(), self.port_var.get(), self.lb, self.out, self.clist)  # 创建一个聊天室服务器线程
-        self.t.setDaemon(True)#这里很重要，不加程序界面会卡死！
+        self.t = TcpServer(self.ip_var.get(), self.port_var.get(
+        ), self.lb, self.out, self.clist)  # 创建一个聊天室服务器线程
+        self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
         self.t.start()
-        self.out.insert(tk.END, "线程开始————————————\n")
-        print('线程开始————————————')
+        self.out.insert(tk.END, "服务器开启————————————\n")
+        print('服务器开启—————————————')
 
     def sendMsg(self):
         '''
         这里发送消息，可以对消息进行判断
         '''
-        data = '[都别装！我是管理员]说道：'+self.that.get()
+        data = '[都别装！我是管理员]说道：' + self.that.get()
         if self.clist:
-            for k,v in self.clist.items():
+            for k, v in self.clist.items():
                 v.send(data.encode())
-        
+
         self.out.insert(tk.END, data + '\n')
-                
+
 
 # Tcp服务器
 class TcpServer(threading.Thread):
@@ -135,10 +134,12 @@ class TcpServer(threading.Thread):
         self.clist = clist  # 存放接入的socket客户端 以客户端用户名保存为字典
         self.addr = addr
         self.port = port
-        self.lb = lb#在线列表
-        self.out = out #服务器信息打印框
-        self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)  # 创建socket对象。
+        self.lb = lb  # 在线列表
+        self.out = out  # 服务器信息打印框
+        self.s = socket.socket(
+            socket.AF_INET, socket.SOCK_STREAM)  # 创建socket对象。
         self.s.bind((self.addr, self.port))  # 绑定IP及端口
+        self.setDaemon(True)
         # print(self.s)
         self.s.listen(5)  # 设置最大连接数，超过后排队
 
@@ -147,22 +148,22 @@ class TcpServer(threading.Thread):
         # 线程的任务，如果未结束一直循环任务
 
     def run(self):
-        
         # 循环判断是否有客户端接入
         while not self.stop_flag:
-            # print('进入TcpServer线程内部--------')
+            print('进入TcpServer线程内部--------')
             self.recieve_msg()
-            
 
     # 线程中的主要任务
+
     def recieve_msg(self):
-        # print('进入recieve_msg内部--------')
         csock, car = self.s.accept()
+        print(csock,car)
         vnt = verifyNameT(csock, car, self.clist, self.lb, self.out)
-        vnt.setDaemon(True)
         vnt.start()
+        print('发现用户连接,启动用户线程.')
 
     # 关闭服务器标识
+
     def stop(self):
         self.stop_flag = True
 
@@ -174,17 +175,18 @@ class verifyNameT(threading.Thread):
         self.csock = csock
         self.car = car
         self.clist = clist
-        self.lb = lb#在线列表
-        self.out = out #服务器信息打印框
+        self.lb = lb  # 在线列表
+        self.out = out  # 服务器信息打印框
 
-    def additem(self,name):
-        self.lb.insert(tk.END,name)
+    def additem(self, name):
+        self.lb.insert(tk.END, name)
+
     def run(self):
         while True:
-            print('进入verifyNameT线程内部循环中--------')
+            print('验证昵称')
             name = self.csock.recv(1024).decode()
             if name in self.clist:
-                err = '用户名已经存在'
+                err = '昵称已经存在'
                 self.csock.send(err.encode())
             else:
                 print('新建一个客户端线程，并加入客户端字典中--------------------')
@@ -197,10 +199,10 @@ class verifyNameT(threading.Thread):
                 msg = '%s 大步流星的走进了聊天室，牛逼哄哄的问道：哪个不服？出来一战！\n' % name
                 for k in self.clist:  # 循环字典每个socket打印消息，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
+                    # print(self.name, k)
                     if self.name != k:
                         self.clist[k].send(msg.encode('utf-8'))
                 self.out.insert(tk.END, msg)
-                print('客户端线程监听开始')
                 break
 
 
@@ -211,29 +213,31 @@ class SocketThread(threading.Thread):
         self.csock = csock
         self.car = car
         self.clist = clist
-        self.lb = lb#在线列表
-        self.out = out #服务器信息打印框
+        self.lb = lb  # 在线列表
+        self.out = out  # 服务器信息打印框
         self.name = name
 
     def run(self):
         while True:
             data = self.csock.recv(1024)  # 接收消息
             if data == 'exit':  # 如果接收到退出消息
-            #这里负责处理客户端退出，应该删除用户列表中的socket关闭掉
+                # 这里负责处理客户端退出，应该删除用户列表中的socket关闭掉
                 break
             if data:  # 如果不为空，打印消息
-            #如果需要更多的功能，比如私聊，应该在这里处理，比如@abc，就应该把消息只发abc或是在服务器这边展示
-            #如果有命令，应该在这里分解后，处理相关的命令。
+                # 如果需要更多的功能，比如私聊，应该在这里处理，比如@abc，就应该把消息只发abc或是在服务器这边展示
+                # 如果有命令，应该在这里分解后，处理相关的命令。
                 print(data.decode())  # 服务器打印消息
-                self.out.insert(tk.END, data.decode()+'\n')
+                self.out.insert(tk.END, data.decode() + '\n')
                 for k in self.clist:  # 循环字典每个socket打印消息，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
+                    # print(self.name, k)
                     if self.name != k:
                         self.clist[k].send(data)
 
         msg = '您已经与服务器断开！'
         self.csock.send(msg.encode())
         self.csock.close()
+
 
 if __name__ == '__main__':
     server = Gui_Server()

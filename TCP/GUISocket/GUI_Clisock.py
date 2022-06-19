@@ -13,6 +13,7 @@
 # Python中创建TCP服务器与客户端进行通信(中)Tk、thread与socket组合。
 ###################################
 # coding=utf-8
+import json
 import random
 import socket
 import threading
@@ -105,11 +106,11 @@ class Gui_Client:
         '''
         这里发送消息，可以对消息进行判断
         '''
-        try:
-            msg = self.t.name + ':' + self.that.get()  # 获取聊天窗口里的消息
-            self.t.s.send(msg.encode('utf-8'))
+        msg = self.that.get()  # 获取聊天窗口里的消息
+        data = {'protocol': 'Chat content', 'data': msg}
+        if self.t.send_json(data):
             self.out.insert(tk.END, msg + '\n')  # 聊天窗口里添加本次聊天的内容
-        except:
+        else:
             messagebox.showinfo("提示", "请先连接服务器再尝试聊天.")
 
 
@@ -139,11 +140,17 @@ class TcpClient(threading.Thread):
                 self.isNameOk()
 
             try:
-                msg = self.s.recv(1024)
+                msg = self.s.recv(1024).decode()
+                if msg == '您已经与服务器断开！':
+                    self.out.insert(tk.END, msg + '\n')
+                    break
                 if msg:
-                    self.out.insert(tk.END, msg.decode() + '\n')
+                    self.out.insert(tk.END, msg + '\n')
             except Exception as e:
                 print('收消息线程已关闭')
+        msg = '您已退出聊天室。'
+        self.out.insert(tk.END, msg + '\n')
+        self.stop()
 
     def isNameOk(self):
         '''
@@ -165,35 +172,20 @@ class TcpClient(threading.Thread):
                 print('验证昵称成功')
                 break
 
-    # # 发送消息线程方法
-    # def sendMsgThread(self):
-    #     print('发消息线程启动------------', self.stop_flag)
-    #     while not self.stop_flag:
-    #         # if self.msgdata == 'exit':#输入exit退出客户端
-    #         #     msg = self.name + '好象有什么急事！一路小跑的离开了聊天室'
-    #         #     self.s.send(msg.encode('utf-8'))
-    #         #     self.out.insert(tk.END,msg + '\n')
-    #         #     time.sleep(1)
-    #         #     self.stop()  # 中止线程
-    #         #     print('发消息线程已关闭')
-    #         #     sys.exit()
+    def send_json(self, msg):
+        '''
+        发送json格式的消息到服务器
+        :param msg: str 消息内容
+        :return: bool
+        '''
 
-    #         if self.msgdata:
-    #             tempdata = '[{0}]说道：{1}'.format(self.name,self.msgdata)
-    #             self.s.send(tempdata.encode('utf-8'))
-    #             self.out.insert(tk.END,tempdata + '\n')
-
-    # # 接收消息线程方法
-    # def recvMsgThread(self):
-    #     print('收消息线程启动-------------', self.stop_flag)
-    #     while not self.stop_flag:
-    #         try:
-    #             msg = self.s.recv(1024)
-    #             if msg:
-    #                 self.out.insert(tk.END, msg.decode()+'\n')
-
-    #         except Exception as e:
-    #             print('收消息线程已关闭')
+        data = json.dumps(msg)
+        try:
+            self.s.send(data.encode('utf-8'))
+            return 1
+        except:
+            messagebox.showinfo("提示", "请先连接服务器再尝试聊天.")
+            return 0
 
     def stop(self):
         self.s.close()

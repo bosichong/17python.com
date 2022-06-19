@@ -31,7 +31,6 @@
 
 ## 客户端
 
-客户端目前就是没有实现图形化，哪位大侠如果实现了，记得通知我，万分感谢，这个坑先放这里不踩了。
 
 具体代码就不贴了，到git下载吧。
 
@@ -39,11 +38,16 @@
 
 
 '''
-
+import json
 import socket
 import threading
 import time
 import tkinter as tk
+
+
+# 聊天协议常量
+
+CHATCONTENT='Chat content' #聊天内容
 
 
 class Gui_Server:
@@ -108,8 +112,7 @@ class Gui_Server:
         '''
         启动服务器
         '''
-        self.t = TcpServer(self.ip_var.get(), self.port_var.get(
-        ), self.lb, self.out, self.clist)  # 创建一个聊天室服务器线程
+        self.t = TcpServer(self.ip_var.get(), self.port_var.get(), self.lb, self.out, self.clist)  # 创建一个聊天室服务器线程
         self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
         self.t.start()
         self.out.insert(tk.END, "服务器开启————————————\n")
@@ -158,9 +161,10 @@ class TcpServer(threading.Thread):
     def recieve_msg(self):
         csock, car = self.s.accept()
         print(csock,car)
+        print('发现用户连接,启动用户线程.')
         vnt = verifyNameT(csock, car, self.clist, self.lb, self.out)
         vnt.start()
-        print('发现用户连接,启动用户线程.')
+        print( len(threading.enumerate()))
 
     # 关闭服务器标识
 
@@ -168,7 +172,7 @@ class TcpServer(threading.Thread):
         self.stop_flag = True
 
 
-# 多线程验证用户登陆
+# 多线程验证用户登陆线程
 class verifyNameT(threading.Thread):
     def __init__(self, csock, car, clist, lb, out):
         threading.Thread.__init__(self)
@@ -219,24 +223,50 @@ class SocketThread(threading.Thread):
 
     def run(self):
         while True:
-            data = self.csock.recv(1024)  # 接收消息
-            if data == 'exit':  # 如果接收到退出消息
+            json_data = self.csock.recv(1024).decode()  # 接收消息
+            data = self.rece_json(json_data)
+            print(data)  # 服务器打印消息
+            if data == '|exit|':  # 如果接收到退出消息
                 # 这里负责处理客户端退出，应该删除用户列表中的socket关闭掉
+
                 break
             if data:  # 如果不为空，打印消息
                 # 如果需要更多的功能，比如私聊，应该在这里处理，比如@abc，就应该把消息只发abc或是在服务器这边展示
                 # 如果有命令，应该在这里分解后，处理相关的命令。
-                print(data.decode())  # 服务器打印消息
-                self.out.insert(tk.END, data.decode() + '\n')
+
+                print(len(threading.enumerate()))
+                self.out.insert(tk.END, self.name+':'+data + '\n')
                 for k in self.clist:  # 循环字典每个socket打印消息，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
                     # print(self.name, k)
                     if self.name != k:
-                        self.clist[k].send(data)
+                        self.clist[k].send((self.name+':'+data).encode())
 
         msg = '您已经与服务器断开！'
+        msg1= '{}已经离开了聊天室'.format(self.name)
+        self.out.insert(tk.END,msg1 + '\n')
+        for k in self.clist:
+            if self.name != k:
+                self.clist[k].send(msg1.encode())
         self.csock.send(msg.encode())
+        self.clist.pop(self.name)
         self.csock.close()
+
+    def rece_json(self,json_data):
+        '''
+        接收客户端的消息根据协议解析
+
+        聊天室信息协议
+        Chat content : 聊天内容
+
+
+        :param json_data: 收到的json数据
+        :return:
+        '''
+
+        data = json.loads(json_data)
+        if data['protocol'] == CHATCONTENT:
+            return data['data']
 
 
 if __name__ == '__main__':

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ecf84df-9254-4ed1-aaf8-e951adadeacc" name="Default" comment="测试了socketserver的测试">
+      <change afterPath="$PROJECT_DIR$/json/json_test.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" afterDir="false" />
@@ -145,7 +146,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
@@ -201,6 +202,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="json_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/json" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/json/json_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -238,21 +261,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="mytest.TestStringMethods.test_isupper 的 Unittest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/pyunittest" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;mytest.TestStringMethods.test_isupper&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="mytest.Test.test_case2 的 Unittest" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -285,19 +293,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.test" />
-      <item itemvalue="Python 测试.mytest.TestStringMethods.test_isupper 的 Unittest" />
+      <item itemvalue="Python.GUI_Server" />
       <item itemvalue="Python 测试.mytest.Test 的 Unittest" />
       <item itemvalue="Python 测试.mytest.Test.test_case2 的 Unittest" />
       <item itemvalue="Python 测试.mytest.Test.test_case3 的 Unittest" />
-      <item itemvalue="Python.GUI_Server" />
+      <item itemvalue="Python.json_test" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.GUI_Server" />
+        <item itemvalue="Python.json_test" />
         <item itemvalue="Python 测试.mytest.Test.test_case2 的 Unittest" />
         <item itemvalue="Python 测试.mytest.Test 的 Unittest" />
         <item itemvalue="Python 测试.mytest.Test.test_case3 的 Unittest" />
-        <item itemvalue="Python 测试.mytest.TestStringMethods.test_isupper 的 Unittest" />
       </list>
     </recent_temporary>
   </component>
@@ -386,8 +394,9 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case3__Unittest.coverage" NAME="mytest.Test.test_case3 的 Unittest 覆盖结果" MODIFIED="1625613441651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
-    <SUITE FILE_PATH="coverage/PythonStudy$GUI_Server.coverage" NAME="GUI_Server 覆盖结果" MODIFIED="1655511547222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
+    <SUITE FILE_PATH="coverage/PythonStudy$GUI_Server.coverage" NAME="GUI_Server 覆盖结果" MODIFIED="1655599502217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test__Unittest.coverage" NAME="mytest.Test 的 Unittest 覆盖结果" MODIFIED="1625613447328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
+    <SUITE FILE_PATH="coverage/PythonStudy$json_test.coverage" NAME="json_test 覆盖结果" MODIFIED="1655599391786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/json" />
     <SUITE FILE_PATH="coverage/PythonStudy$logtest.coverage" NAME="logtest 覆盖结果" MODIFIED="1625612757951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
     <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case2__Unittest.coverage" NAME="mytest.Test.test_case2 的 Unittest 覆盖结果" MODIFIED="1625753632793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
     <SUITE FILE_PATH="coverage/PythonStudy$test_main.coverage" NAME="test_main 覆盖结果" MODIFIED="1625612804691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/算法" />

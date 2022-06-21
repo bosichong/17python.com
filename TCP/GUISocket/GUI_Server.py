@@ -44,10 +44,13 @@ import threading
 import time
 import tkinter as tk
 
-
 # 聊天协议常量
 
-CHATCONTENT='Chat content' #聊天内容
+CHATCONTENT = 'chatcontent'  # 聊天内容
+CHAT_EXIT = '|exit|'  # 退出聊天室
+CHAT_USERS = 'chatusers'  # 聊天室用户列表
+CHAT_REG_USERNAME = 'reg_username'  # 注册用昵称
+CHAT_USERS = 'chatusers'  # 用户列表
 
 
 class Gui_Server:
@@ -57,6 +60,8 @@ class Gui_Server:
 
     def __init__(self):
         self.clist = {}  # 存放接入的socket客户端 以客户端用户名保存为字典
+        self.namelist = list()  # 存放tk.listbox中的用户名称列表
+        self.is_server_start = 0  # 服务器是否启动
 
         self.root = tk.Tk()  # 整个服务器的窗口
         self.root.title("Python江湖大佬聊天室服务器管理器 1.0 By py_sky 学习交流群：217840699")
@@ -67,7 +72,8 @@ class Gui_Server:
         self.server_frame.pack(fill=tk.X, side=tk.TOP)
 
         # 用户列表框
-        self.lb = tk.Listbox(self.info_frame, width=20, selectmode=tk.EXTENDED)
+        self.name_var = tk.StringVar()  # 绑定listbox的列表值
+        self.lb = tk.Listbox(self.info_frame, listvariable=self.name_var, width=20, selectmode=tk.EXTENDED)
         self.lb.pack(fill=tk.Y, side=tk.LEFT)
 
         # 创建打印聊天信息的text
@@ -106,38 +112,65 @@ class Gui_Server:
         # 信息发送按钮
         self.end_btn = tk.Button(
             self.down_server, text="发送消息", width=18, command=self.sendMsg).pack(side=tk.LEFT)
+
+        self.root.protocol('WM_DELETE_WINDOW', self.close_window)
         self.root.mainloop()
+
+    def close_window(self):
+        '''
+
+        窗口关闭，关闭所有连接
+        :return:
+        '''
+        print('窗口准备开始关闭************')
+        if self.is_server_start:
+            # 关闭所有客户端连接
+            if self.clist:
+                for k, v in self.clist.items():
+                    sendlisttousers([], [])
+
+                    v.close()
+            # 关闭当前服务器
+            self.t.stop_flag = True
+            self.root.destroy()
+
+        else:
+            self.root.destroy()
+            print('程序退出，窗口关闭。')
 
     def server_start(self):
         '''
         启动服务器
         '''
-        self.t = TcpServer(self.ip_var.get(), self.port_var.get(), self.lb, self.out, self.clist)  # 创建一个聊天室服务器线程
+        self.t = TcpServer(self.ip_var.get(), self.port_var.get(), self.name_var, self.namelist, self.out,
+                           self.clist)  # 创建一个聊天室服务器线程
         self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
         self.t.start()
         self.out.insert(tk.END, "服务器开启————————————\n")
         print('服务器开启—————————————')
+        self.is_server_start = 1
 
     def sendMsg(self):
         '''
         这里发送消息，可以对消息进行判断
         '''
-        data = '[都别装！我是管理员]说道：' + self.that.get()
+        msg = '[都别装！我是管理员]说道：' + self.that.get()
+        data = {'protocol': CHATCONTENT, 'data': msg}
         if self.clist:
             for k, v in self.clist.items():
-                v.send(data.encode())
-
-        self.out.insert(tk.END, data + '\n')
+                send_json(v,data)
+        self.out.insert(tk.END, msg + '\n')
 
 
 # Tcp服务器
 class TcpServer(threading.Thread):
-    def __init__(self, addr, port, lb, out, clist):
+    def __init__(self, addr, port, name_var, namelist, out, clist):
         threading.Thread.__init__(self)
         self.clist = clist  # 存放接入的socket客户端 以客户端用户名保存为字典
         self.addr = addr
         self.port = port
-        self.lb = lb  # 在线列表
+        self.name_var = name_var
+        self.namelist = namelist  # 在线列表
         self.out = out  # 服务器信息打印框
         self.s = socket.socket(
             socket.AF_INET, socket.SOCK_STREAM)  # 创建socket对象。
@@ -160,11 +193,11 @@ class TcpServer(threading.Thread):
 
     def recieve_msg(self):
         csock, car = self.s.accept()
-        print(csock,car)
+        print(csock, car)
         print('发现用户连接,启动用户线程.')
-        vnt = verifyNameT(csock, car, self.clist, self.lb, self.out)
+        vnt = verifyNameT(csock, car, self.clist, self.name_var, self.namelist, self.out)
         vnt.start()
-        print( len(threading.enumerate()))
+        print(len(threading.enumerate()))
 
     # 关闭服务器标识
 
@@ -174,99 +207,155 @@ class TcpServer(threading.Thread):
 
 # 多线程验证用户登陆线程
 class verifyNameT(threading.Thread):
-    def __init__(self, csock, car, clist, lb, out):
+    def __init__(self, csock, car, clist, name_var, namelist, out):
         threading.Thread.__init__(self)
         self.csock = csock
         self.car = car
         self.clist = clist
-        self.lb = lb  # 在线列表
+        self.name_var = name_var
+        self.namelist = namelist  # 在线列表
         self.out = out  # 服务器信息打印框
 
     def additem(self, name):
-        self.lb.insert(tk.END, name)
+        self.namelist.append(name)
+        self.name_var.set(self.namelist)
 
     def run(self):
+        '''
+
+
+        :return:
+        '''
         while True:
             print('验证昵称')
-            name = self.csock.recv(1024).decode()
+            username_json = self.csock.recv(1024).decode()
+            name = rece_json(username_json)
+            # 验证用户昵称是否存在
             if name in self.clist:
                 err = '昵称已经存在'
-                self.csock.send(err.encode())
+                err_json = {'protocol': CHAT_REG_USERNAME, 'data': err}
+                self.csock.send(json.dumps(err_json).encode())
             else:
                 print('新建一个客户端线程，并加入客户端字典中--------------------')
                 # 加入客户端线程列表
                 self.additem(name)
                 self.clist[name] = self.csock
-                st = SocketThread(self.csock, self.car, self.clist, self.lb, self.out, name)  # 创建线程来接待客户端
+                ## 发送所用用户列表给所有人
+                sendlisttousers(self.clist, self.namelist)
+                st = SocketThread(self.csock, self.car, self.clist, self.name_var, self.namelist, self.out,
+                                  name)  # 创建线程来接待客户端
                 st.start()
                 time.sleep(1)
                 msg = '%s 大步流星的走进了聊天室，牛逼哄哄的问道：哪个不服？出来一战！\n' % name
+                data = {'protocol': CHATCONTENT, 'data': msg}
                 for k in self.clist:  # 循环字典每个socket打印消息，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
                     # print(self.name, k)
                     if self.name != k:
-                        self.clist[k].send(msg.encode('utf-8'))
+                        send_json(self.clist[k],data)
                 self.out.insert(tk.END, msg)
+                print('昵称验证完毕！')
                 break
 
 
 # 多线程处理客户端，如果创建了一个socket连接就会创建一个线程来处理。
 class SocketThread(threading.Thread):
-    def __init__(self, csock, car, clist, lb, out, name):
+    def __init__(self, csock, car, clist, name_var, namelist, out, name):
         threading.Thread.__init__(self)
         self.csock = csock
         self.car = car
         self.clist = clist
-        self.lb = lb  # 在线列表
+        self.name_var = name_var  # listbox 数据
+        self.namelist = namelist  # 在线用户列表
         self.out = out  # 服务器信息打印框
         self.name = name
 
     def run(self):
         while True:
             json_data = self.csock.recv(1024).decode()  # 接收消息
-            data = self.rece_json(json_data)
-            print(data)  # 服务器打印消息
+            data = rece_json(json_data)
             if data == '|exit|':  # 如果接收到退出消息
                 # 这里负责处理客户端退出，应该删除用户列表中的socket关闭掉
-
                 break
             if data:  # 如果不为空，打印消息
                 # 如果需要更多的功能，比如私聊，应该在这里处理，比如@abc，就应该把消息只发abc或是在服务器这边展示
                 # 如果有命令，应该在这里分解后，处理相关的命令。
 
                 print(len(threading.enumerate()))
-                self.out.insert(tk.END, self.name+':'+data + '\n')
+                self.out.insert(tk.END, self.name + ':' + data + '\n')
                 for k in self.clist:  # 循环字典每个socket打印消息，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
                     # print(self.name, k)
                     if self.name != k:
-                        self.clist[k].send((self.name+':'+data).encode())
+                        self.clist[k].send((self.name + ':' + data).encode())
 
         msg = '您已经与服务器断开！'
-        msg1= '{}已经离开了聊天室'.format(self.name)
-        self.out.insert(tk.END,msg1 + '\n')
+        msg1 = '{}已经离开了聊天室'.format(self.name)
+        self.out.insert(tk.END, msg1 + '\n')
         for k in self.clist:
             if self.name != k:
                 self.clist[k].send(msg1.encode())
         self.csock.send(msg.encode())
         self.clist.pop(self.name)
+        print(self.clist)
+        self.namelist.clear()  # 清空用户列表数据
+        for n in self.clist.items():
+            self.namelist.append(n[0])
+        self.name_var.set(self.namelist)  # 重新加载用户列表
         self.csock.close()
 
-    def rece_json(self,json_data):
-        '''
-        接收客户端的消息根据协议解析
 
-        聊天室信息协议
-        Chat content : 聊天内容
+def rece_json(data):
+    '''
+    接收客户端的消息根据协议解析
+
+    聊天室信息协议
+    Chat content : 聊天内容
 
 
-        :param json_data: 收到的json数据
-        :return:
-        '''
+    :param json_data: 收到的json数据
+    :return:
+    '''
+    jsondata = json.loads(data)
+    print(jsondata, type(jsondata))
+    if jsondata['protocol'] == CHATCONTENT:
+        return jsondata['data']
+    elif jsondata['protocol'] == CHAT_EXIT:
+        return CHAT_EXIT
+    elif jsondata['protocol'] == CHAT_REG_USERNAME:
+        return jsondata['data']
+    elif jsondata['protocol'] == CHAT_USERS:
+        return jsondata['data']
 
-        data = json.loads(json_data)
-        if data['protocol'] == CHATCONTENT:
-            return data['data']
+
+def send_json(s, msg):
+    '''
+    发送json格式的消息到客户端
+    :param msg: str 消息内容
+    :return: bool
+    '''
+
+    data = json.dumps(msg)
+    try:
+        s.send(data.encode('utf-8'))
+        return 1
+    except:
+        print("此用户的连接已断开！")
+        return 0
+
+
+def sendlisttousers(clist, namelist):
+    '''
+    发送所用用户列表给所有人
+    :param clist: 所有用户的连接
+    :param namelist: 用户列表
+    :return:
+    '''
+    users_data = {'protocol': CHAT_USERS, 'data': namelist}
+    jsondata = json.dumps(users_data, ensure_ascii=False)
+    print(jsondata, type(jsondata))
+    for k in clist:
+        clist[k].send(jsondata.encode('utf-8'))
 
 
 if __name__ == '__main__':

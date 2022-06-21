@@ -20,6 +20,12 @@ import threading
 import tkinter as tk
 from tkinter import messagebox  # 导入提示窗口包
 
+CHATCONTENT = 'chatcontent'  # 聊天内容
+CHAT_EXIT = '|exit|'  # 退出聊天室
+CHAT_USERS = 'chatusers'  # 聊天室用户列表
+CHAT_REG_USERNAME = 'reg_username'  # 注册用昵称
+CHAT_USERS = 'chatusers'  # 用户列表
+
 
 class Gui_Client:
     '''
@@ -28,6 +34,7 @@ class Gui_Client:
 
     def __init__(self):
         self.clist = {}  # 存放接入的socket客户端 以客户端用户名保存为字典
+        self.namelist = list()  # 存放tk.listbox中的用户名称列表
         self.go()
 
     def go(self):
@@ -43,7 +50,8 @@ class Gui_Client:
         self.server_frame.pack(fill=tk.X, side=tk.TOP)
 
         # 用户列表框
-        self.lb = tk.Listbox(self.info_frame, width=20, selectmode=tk.EXTENDED)
+        self.name_var = tk.StringVar()  # 绑定listbox的列表值
+        self.lb = tk.Listbox(self.info_frame, listvariable=self.name_var, width=20, selectmode=tk.EXTENDED)
         self.lb.pack(fill=tk.Y, side=tk.LEFT)
 
         # 创建打印聊天信息的text
@@ -93,7 +101,8 @@ class Gui_Client:
         '''
 
         try:
-            self.t = TcpClient(self.ip_var.get(), self.port_var.get(), self.lb, self.out, self.clist, getName())
+            self.t = TcpClient(self.ip_var.get(), self.port_var.get(), self.name_var, self.namelist, self.out,
+                               self.clist, getName())
             self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
             self.t.start()
             self.out.insert(tk.END, "线程开始————————————\n")
@@ -107,19 +116,20 @@ class Gui_Client:
         这里发送消息，可以对消息进行判断
         '''
         msg = self.that.get()  # 获取聊天窗口里的消息
-        data = {'protocol': 'Chat content', 'data': msg}
+        data = {'protocol':CHATCONTENT, 'data': msg}
         if self.t.send_json(data):
             self.out.insert(tk.END, msg + '\n')  # 聊天窗口里添加本次聊天的内容
         else:
-            messagebox.showinfo("提示", "请先连接服务器再尝试聊天.")
+            print("提示", "请先连接服务器再尝试聊天.")
 
 
 class TcpClient(threading.Thread):
-    def __init__(self, addr, port, lb, out, clist, name):
+    def __init__(self, addr, port, name_var, namelist, out, clist, name):
         threading.Thread.__init__(self)
         self.addr = addr
         self.port = port
-        self.lb = lb
+        self.name_var = name_var
+        self.namelist = namelist  # 在线列表
         self.out = out
         self.clist = clist
         self.s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -138,9 +148,8 @@ class TcpClient(threading.Thread):
         while not self.stop_flag:
             if self.isOk:
                 self.isNameOk()
-
             try:
-                msg = self.s.recv(1024).decode()
+                msg = self.rece_json(self.s.recv(1024).decode())
                 if msg == '您已经与服务器断开！':
                     self.out.insert(tk.END, msg + '\n')
                     break
@@ -148,6 +157,7 @@ class TcpClient(threading.Thread):
                     self.out.insert(tk.END, msg + '\n')
             except Exception as e:
                 print('收消息线程已关闭')
+                break
         msg = '您已退出聊天室。'
         self.out.insert(tk.END, msg + '\n')
         self.stop()
@@ -160,17 +170,23 @@ class TcpClient(threading.Thread):
         print('验证昵称')
         while True:
             if self.isOk:
-                self.s.send(self.name.encode('utf-8'))  # 发送到服务器
+                usernamedata = {'protocol': CHAT_REG_USERNAME, 'data': self.name}
+                self.send_json(usernamedata)  # 发送昵称到服务器验证
                 self.isOk = 0
 
-            name_msg = self.s.recv(1024)
-            if name_msg == '昵称已经存在':  # 昵称正常的话跳出昵称验证的循环,开始正常接收消息
+            tempjson = self.rece_json(self.s.recv(1024))
+            if tempjson == '昵称已经存在':  # 昵称正常的话跳出昵称验证的循环,开始正常接收消息
                 self.name = getName()
                 self.isOk = 1
                 print('验证昵称失败，重新发送了新昵称验证')
             else:
-                print('验证昵称成功')
+                print('接收用户列表')
+                self.namelist.clear()
+                self.namelist = tempjson
+                self.name_var.set(self.namelist)
+                print('验证昵称成功，保存用户列表成功')
                 break
+
 
     def send_json(self, msg):
         '''
@@ -186,6 +202,31 @@ class TcpClient(threading.Thread):
         except:
             messagebox.showinfo("提示", "请先连接服务器再尝试聊天.")
             return 0
+
+    def rece_json(self, data):
+        '''
+        接收客户端的消息根据协议解析
+
+        聊天室信息协议
+        Chat content : 聊天内容
+
+
+        :param json_data: 收到的json数据
+        :return:
+        '''
+        jsondata = json.loads(data)
+        print(jsondata, type(jsondata))
+        if jsondata['protocol'] == CHATCONTENT:
+            return jsondata['data']
+        elif jsondata['protocol'] == CHAT_EXIT:
+            return CHAT_EXIT
+        elif jsondata['protocol'] == CHAT_REG_USERNAME:
+            return jsondata['data']
+        elif jsondata['protocol'] == CHAT_USERS:
+            return jsondata['data']
+
+
+
 
     def stop(self):
         self.s.close()

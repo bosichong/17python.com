@@ -1,4 +1,4 @@
-#codeing=utf-8
+# codeing=utf-8
 # @Time    : 2017-09-23
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
@@ -14,7 +14,6 @@
 # Python TK和Tkinter的GUI编程(3) Listbox
 ###################################
 import tkinter as tk
-
 
 '''
 ## listbox 列表框
@@ -33,26 +32,39 @@ root.title("Listbox 测试。")
 # 存放list的容器
 list_frame = tk.Frame(root)
 list_frame.pack(fill=tk.X, side=tk.TOP)
-#存放按钮文本框的容器
+# 存放按钮文本框的容器
 button_frame = tk.Frame(root)
 button_frame.pack(fill=tk.X, side=tk.TOP)
+
+
 # 获取当前listbox中item值，并在控制台打印值
 def print_item(event):
     items = lb.curselection()
     for k in items:
         print(lb.get(k))
-var = tk.StringVar()#绑定listbox的列表值
-var.set(('aa','bb','cc','dd','ee'))
-lb = tk.Listbox(list_frame, listvariable = var, selectmode=tk.EXTENDED)#创建一个listbox
-lb.bind('<ButtonRelease-1>',print_item)#绑定鼠标左键点击事件。
+
+
+var = tk.StringVar()  # 绑定listbox的列表值
+var.set(('aa', 'bb', 'cc', 'dd', 'ee'))
+lb = tk.Listbox(list_frame, listvariable=var, selectmode=tk.EXTENDED)  # 创建一个listbox
+lb.bind('<ButtonRelease-1>', print_item)  # 绑定鼠标左键点击事件。
 lb.pack(fill=tk.X)
+
+
 # 添加listbox item的方法
 def additem():
-    lb.insert(tk.END,v.get())
+    lb.insert(tk.END, v.get())
     v.set('')
-v = tk.StringVar()#绑定文本框的变量
-en = tk.Entry(button_frame, textvariable = v).pack()
-b1 = tk.Button(button_frame, text="添加", command=additem).pack(side=tk.LEFT)#添加一个item
-b2 = tk.Button(button_frame, text="删除", command= lambda lb=lb:lb.delete(tk.ANCHOR)).pack(side=tk.LEFT)#删除一个listbox中选中的item
-root.mainloop()
 
+
+v = tk.StringVar()  # 绑定文本框的变量
+en = tk.Entry(button_frame, textvariable=v).pack()
+b1 = tk.Button(button_frame, text="添加", command=additem).pack(side=tk.LEFT)  # 添加一个item
+b2 = tk.Button(button_frame, text="删除", command=lambda lb=lb: lb.delete(tk.ANCHOR)).pack(
+    side=tk.LEFT)  # 删除一个listbox中选中的item
+
+kk = [11,22]
+var.set(kk)
+kk = [33,'44']
+var.set(kk)
+root.mainloop()

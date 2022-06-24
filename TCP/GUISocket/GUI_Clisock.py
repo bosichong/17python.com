@@ -56,8 +56,14 @@ class Gui_Client:
         self.lb.pack(fill=tk.Y, side=tk.LEFT)
 
         # 创建打印聊天信息的text
-        self.out = tk.Text(self.info_frame, width=80, font=("Symbol", 14))
-        self.out.insert(tk.END, "欢迎光临Python江湖聊天室！ \n")
+        # 分别创建一个横向，一个坚向的滚动条，
+        self.ybar = tk.Scrollbar(self.info_frame)
+        self.ybar.pack(fill=tk.Y, side=tk.RIGHT)
+        # self.xbar = tk.Scrollbar(self.info_frame, orient=tk.HORIZONTAL)  # orient=tk.HORIZONTAL表示为坚向滚动
+        # self.xbar.pack(fill=tk.X, side=tk.BOTTOM, )
+
+        self.out = tk.Text(self.info_frame, width=80, font=("Symbol", 14), yscrollcommand=self.ybar.set, )
+        insert_text(self.out,'欢迎光临Python江湖聊天室！')
         self.out.pack(fill=tk.Y, side=tk.LEFT)
 
         self.top_server = tk.Frame(self.server_frame, )
@@ -92,8 +98,6 @@ class Gui_Client:
         self.end_btn = tk.Button(
             self.down_server, text="发送消息", width=18, command=self.sendMsg).pack(side=tk.LEFT)
 
-
-
         self.root.protocol('WM_DELETE_WINDOW', self.close_window)
         self.root.mainloop()
 
@@ -103,7 +107,7 @@ class Gui_Client:
         :return:
         """
         print('窗口准备开始关闭************')
-        if self.t.s:
+        if self.t:
             data = {'protocol': CHAT_EXIT, 'data': '|exit|'}
             data1 = json.dumps(data)
             try:
@@ -120,8 +124,6 @@ class Gui_Client:
         else:
             self.root.destroy()
 
-
-
     def client_Start(self):
         '''
         启动客户端
@@ -132,7 +134,7 @@ class Gui_Client:
                                self.clist, getName())
             self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
             self.t.start()
-            self.out.insert(tk.END, "线程开始————————————\n")
+            insert_text(self.out,"线程开始————————————\n")
             print('线程开始————————————')
         except Exception as e:
             messagebox.showinfo("提示", "服务器没有开启或无法连接!")
@@ -143,10 +145,10 @@ class Gui_Client:
         这里发送消息，可以对消息进行判断
         '''
         msg = self.that.get()  # 获取聊天窗口里的消息
-        data = {'protocol':CHATCONTENT, 'data': msg}
-        if self.t.s :
+        data = {'protocol': CHATCONTENT, 'data': msg}
+        if self.t:
             if self.t.send_json(data):
-                self.out.insert(tk.END, msg + '\n')  # 聊天窗口里添加本次聊天的内容
+                insert_text(self.out,msg)
             else:
                 print("提示", "请先连接服务器再尝试聊天.")
         else:
@@ -182,23 +184,23 @@ class TcpClient(threading.Thread):
             try:
                 msg = self.rece_json(self.s.recv(1024).decode())
                 print(type(msg))
-                if msg['protocol'] == CHAT_EXIT:# 退出断开连接
-                    self.out.insert(tk.END, msg + '\n')
+                if msg['protocol'] == CHAT_EXIT:  # 退出断开连接
+                    insert_text(self.out,msg)
                     break
-                if msg['protocol'] == CHAT_USERS:# 接收新的用户列表
+                if msg['protocol'] == CHAT_USERS:  # 接收新的用户列表
                     print('接收用户列表')
                     self.namelist.clear()
                     self.namelist = msg['data']
                     self.name_var.set(self.namelist)
                     print('保存用户列表成功')
-                if msg['protocol'] == CHATCONTENT:# 接收聊天内容
-                    self.out.insert(tk.END, msg['data'] + '\n')
-                    print('接收服务器的消息：',msg['data'])
+                if msg['protocol'] == CHATCONTENT:  # 接收聊天内容
+                    insert_text(self.out,msg['data'])
+                    print('接收服务器的消息：', msg['data'])
             except Exception as e:
-                print('收消息线程已关闭',e)
+                print('收消息线程已关闭', e)
                 break
         msg = '服务器已断开，或是您已退出聊天室。'
-        self.out.insert(tk.END, msg + '\n')
+        insert_text(self.out,msg)
         self.stop()
 
     def isNameOk(self):
@@ -218,14 +220,13 @@ class TcpClient(threading.Thread):
                 self.name = getName()
                 self.isOk = 1
                 print('验证昵称失败，重新发送了新昵称验证')
-            elif tempjson['protocol'] == CHAT_USERS: # 接收用户列表并展示
+            elif tempjson['protocol'] == CHAT_USERS:  # 接收用户列表并展示
                 print('接收用户列表')
                 self.namelist.clear()
                 self.namelist = tempjson['data']
                 self.name_var.set(self.namelist)
                 print('验证昵称成功，保存用户列表成功')
                 break
-
 
     def send_json(self, msg):
         '''
@@ -251,13 +252,19 @@ class TcpClient(threading.Thread):
         print(jsondata, type(jsondata))
         return jsondata
 
-
-
-
-
     def stop(self):
         self.s.close()
         self.stop_flag = True
+
+
+def insert_text(out, msg):
+    '''
+    添加聊天记录到text部件。
+    :param msg: str
+    :return:
+    '''
+    out.insert(tk.END, msg + '\n')
+    out.see(tk.END)
 
 
 def main():

@@ -79,8 +79,13 @@ class GuiServer:
         self.lb.pack(fill=tk.Y, side=tk.LEFT)
 
         # 创建打印聊天信息的text
-        self.out = tk.Text(self.info_frame, width=80, font=("Symbol", 14))
-        self.out.insert(tk.END, "欢迎光临Python江湖大佬聊天室！ \n")
+        self.ybar = tk.Scrollbar(self.info_frame)
+        self.ybar.pack(fill=tk.Y, side=tk.RIGHT)
+        # self.xbar = tk.Scrollbar(self.info_frame, orient=tk.HORIZONTAL)  # orient=tk.HORIZONTAL表示为坚向滚动
+        # self.xbar.pack(fill=tk.X, side=tk.BOTTOM, )
+
+        self.out = tk.Text(self.info_frame, width=80, font=("Symbol", 14), yscrollcommand=self.ybar.set, )
+        insert_text(self.out,'欢迎光临Python江湖大佬聊天室！')
         self.out.pack(fill=tk.Y, side=tk.LEFT)
 
         self.top_server = tk.Frame(self.server_frame, )
@@ -130,7 +135,6 @@ class GuiServer:
             print('准备关闭的客户端连接')
             print(self.t.cs)
 
-
             if self.t.cs:
                 for k, v in self.t.cs.items():
                     users_data = {'protocol': CHAT_USERS, 'data': []}
@@ -158,7 +162,7 @@ class GuiServer:
         self.t = TcpServer(self.ip_var.get(), self.port_var.get(), self.name_var, self.out, )  # 创建一个聊天室服务器线程
         self.t.setDaemon(True)  # 这里很重要，不加程序界面会卡死！
         self.t.start()
-        self.out.insert(tk.END, "服务器开启————————————\n")
+        insert_text(self.out,'服务器开启————————————')
         print('服务器开启—————————————')
         self.is_server_start = 1
 
@@ -171,7 +175,7 @@ class GuiServer:
         if self.t.cs:
             for k, v in self.t.cs.items():
                 send_json(v, data)
-        self.out.insert(tk.END, msg + '\n')
+        insert_text(self.out,msg)
 
 
 # Tcp服务器
@@ -270,7 +274,7 @@ class VerifyNameT(threading.Thread):
                     print(name, k)
                     if name != k:
                         send_json(self.cs[k], data)
-                self.out.insert(tk.END, msg)
+                insert_text(self.out,msg)
                 print('昵称验证完毕！')
                 break
 
@@ -304,7 +308,7 @@ class SocketThread(threading.Thread):
             if data['protocol'] == CHAT_EXIT:
                 break
             if data['protocol'] == CHATCONTENT:  # 如果聊天内容
-                self.out.insert(tk.END, self.name + ':' + data['data'] + '\n')
+                insert_text(self.out,self.name + ':' + data['data'])
                 jsondata = {'protocol': CHATCONTENT, 'data': self.name + ':' + data['data']}
                 for k in self.cs:  # 循环字典每个socket，这样每个客户端都会得到消息。
                     # 把消息发给每个客户端
@@ -317,7 +321,7 @@ class SocketThread(threading.Thread):
             jsondata1 = {'protocol': CHATCONTENT, 'data': msg1}
             jsondata2 = {'protocol': CHATCONTENT, 'data': msg2}
             # 服务器聊天窗口打印
-            self.out.insert(tk.END, msg1 + '\n')
+            insert_text(self.out,msg1)
             # 发送给除了发送消息的用
             for k in self.cs:
                 if self.name != k:
@@ -334,6 +338,11 @@ class SocketThread(threading.Thread):
             sendlisttousers(self.cs, self.namelist)  # 发送所用用户列表给所有人
             print('发送所用用户列表给所有人-------------------')
             self.csock.close()
+
+
+def insert_text(out, msg1):
+    out.insert(tk.END, msg1 + '\n')
+    out.see(tk.END)
 
 
 def rece_json(data):

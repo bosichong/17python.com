@@ -16,6 +16,7 @@
 import json
 import random
 import socket
+import sys
 import threading
 import tkinter as tk
 from tkinter import messagebox  # 导入提示窗口包
@@ -102,13 +103,20 @@ class Gui_Client:
         :return:
         """
         print('窗口准备开始关闭************')
-        if self.t :
+        if self.t.s:
             data = {'protocol': CHAT_EXIT, 'data': '|exit|'}
-            if self.t.send_json(data):
-                print('已发送退出聊天室的申请')
-            else:
-                print("提示", "请先连接服务器再尝试聊天.")
-            self.root.destroy()
+            data1 = json.dumps(data)
+            try:
+                self.t.s.send(data1.encode('utf-8'))
+                self.root.destroy()
+            except:
+                self.root.destroy()
+                sys.exit()
+            # if self.t.send_json(data):
+            #     print('已发送退出聊天室的申请')
+            # else:
+            #     print("提示", "请先连接服务器再尝试聊天.")
+            # self.root.destroy()
         else:
             self.root.destroy()
 
@@ -136,7 +144,7 @@ class Gui_Client:
         '''
         msg = self.that.get()  # 获取聊天窗口里的消息
         data = {'protocol':CHATCONTENT, 'data': msg}
-        if self.t :
+        if self.t.s :
             if self.t.send_json(data):
                 self.out.insert(tk.END, msg + '\n')  # 聊天窗口里添加本次聊天的内容
             else:
@@ -189,7 +197,7 @@ class TcpClient(threading.Thread):
             except Exception as e:
                 print('收消息线程已关闭',e)
                 break
-        msg = '您已退出聊天室。'
+        msg = '服务器已断开，或是您已退出聊天室。'
         self.out.insert(tk.END, msg + '\n')
         self.stop()
 

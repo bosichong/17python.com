@@ -25,6 +25,7 @@ CHATCONTENT = 'chatcontent'  # 聊天内容
 CHAT_EXIT = '|exit|'  # 退出聊天室
 CHAT_USERS = 'chatusers'  # 聊天室用户列表
 CHAT_REG_USERNAME = 'reg_username'  # 注册用昵称
+CHAT_ONETOONE = 'onetoone' #私聊标识
 
 
 class Gui_Client:
@@ -53,7 +54,11 @@ class Gui_Client:
         # 用户列表框
         self.name_var = tk.StringVar()  # 绑定listbox的列表值
         self.lb = tk.Listbox(self.info_frame, listvariable=self.name_var, width=20, selectmode=tk.EXTENDED)
+        self.lb.bind('<ButtonRelease-1>', self.onetoonethat)  # 绑定鼠标左键点击事件。
         self.lb.pack(fill=tk.Y, side=tk.LEFT)
+
+        # test 测试列表用
+        self.name_var.set(('aa', 'bb', 'cc', 'dd', 'ee'))
 
         # 创建打印聊天信息的text
         # 分别创建一个横向，一个坚向的滚动条，
@@ -145,6 +150,7 @@ class Gui_Client:
         这里发送消息，可以对消息进行判断
         '''
         msg = self.that.get()  # 获取聊天窗口里的消息
+        # //todo 私聊判断
         data = {'protocol': CHATCONTENT, 'data': msg}
         if self.t:
             if self.t.send_json(data):
@@ -154,6 +160,14 @@ class Gui_Client:
         else:
             messagebox.showinfo("提示", "请先连接服务器再尝试聊天.")
             print("提示", "请先连接服务器再尝试聊天.")
+
+    def onetoonethat(self,event):
+        items = self.lb.curselection()
+        for k in items:
+            print(self.lb.get(k))
+            firstmsg = '@'+self.lb.get(k)+' ' #私聊标识 @昵称+空格
+            msg = '你好，可以私聊一会吗？'
+            self.that_var.set(firstmsg+msg)
 
 
 class TcpClient(threading.Thread):

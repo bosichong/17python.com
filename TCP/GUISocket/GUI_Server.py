@@ -54,6 +54,7 @@ CHATCONTENT = 'chatcontent'  # 聊天内容
 CHAT_EXIT = '|exit|'  # 退出聊天室
 CHAT_USERS = 'chatusers'  # 聊天室用户列表
 CHAT_REG_USERNAME = 'reg_username'  # 注册用昵称
+CHAT_ONETOONE = 'onetoone' #私聊标识
 
 
 class GuiServer:

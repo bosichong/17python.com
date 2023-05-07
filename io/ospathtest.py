@@ -1,3 +1,11 @@
+'''
+Author: J.sky bosichong@qq.com
+Date: 2017-09-04 11:47:52
+LastEditors: J.sky bosichong@qq.com
+LastEditTime: 2022-12-02 20:11:23
+FilePath: /PythonStudy/io/ospathtest.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 #codeing=utf-8
 # @Time    : 2017-09-04
 # @Author  : J.sky
@@ -19,6 +27,7 @@ print(os.path.abspath('ospathtest.py'))#当前文件的完整地址
 print(os.path.dirname(__file__)) #当前目录所属地址
 print(os.path.isdir(os.path.dirname(__file__)))# 判断是否为路径
 print(os.path.isfile(os.path.dirname(__file__)))# 判断是否为文件
+print(os.path.exists(os.path.dirname(__file__)))# 判断文件或是目录是否存在
 ##################################
 p = os.path.join(os.path.dirname(__file__), 'aaa')
 os.mkdir(p) # 创建目录
@@ -40,4 +49,53 @@ print(os.path.isfile(path))  #判断路径是否为文件
 print(os.path.isdir(path))  #判断路径是否为目录
 print(os.path.islink(path))  #判断路径是否为链接
 print(os.path.ismount(path))  #判断路径是否为挂载点
+
+
+# 查找文件
+def find_file(path,filename):
+    """
+    :param path: 文件夹路径
+    :param filename: 文件名
+    :return: 找到的文件路径列表
+    """
+    file_list = []
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if file == filename:
+                file_path = os.path.join(root, file)
+                file_list.append(file_path)
+    return file_list
+
+# 查找文件夹
+def find_dir(path,dirname):
+    """
+    :param path: 文件夹路径
+    :param dirname: 文件夹名
+    :return: 找到的文件路径列表
+    """
+    file_list = []
+    for root, dirs, files in os.walk(path):
+        for dir in dirs:
+            if dir == dirname:
+                file_path = os.path.join(root, dir)
+                file_list.append(file_path)
+    return file_list
+
+
+
+# 删除文件
+def del_file(path):
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            os.remove(os.path.join(root, file))
+
+
+# 删除目录
+def del_dir(path):
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            os.remove(os.path.join(root, file))
+        for dir in dirs:
+            os.rmdir(os.path.join(root, dir))
+
 

@@ -1,4 +1,4 @@
-#codeing=utf-8
+# codeing=utf-8
 # @Time    : 2017-10.07
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
@@ -82,30 +82,34 @@
 ###################################
 import random, time, queue
 from multiprocessing.managers import BaseManager
+
 # 创建任务需要的两个队列
 pq = queue.Queue()
 cq = queue.Queue()
+
+
 # 注册一个管理器，注册Queue队列到网，供其它终端使用。
 class GodManager(BaseManager):
     pass
 
-#把任务队列通过管理器注册到网上，这样就可以在多台机器间访问通信，做到分布式通信。
-GodManager.register('pq',callable=lambda:pq)
-GodManager.register('cq',callable=lambda:cq)
-#设置服务器的ip、端口及密码
-manager = GodManager(address=('192.168.0.88',5678),authkey=b'www.17python.com')
-manager.start()#启动服务器
+
+# 把任务队列通过管理器注册到网上，这样就可以在多台机器间访问通信，做到分布式通信。
+GodManager.register('pq', callable=lambda: pq)
+GodManager.register('cq', callable=lambda: cq)
+# 设置服务器的ip、端口及密码
+manager = GodManager(address=('192.168.0.88', 5678), authkey=b'www.17python.com')
+manager.start()  # 启动服务器
 print('服务器已经启动！')
-#重新获取已经在网上注册的队列,使用队列名()方法来获得网上注册的队列名。
+# 重新获取已经在网上注册的队列,使用队列名()方法来获得网上注册的队列名。
 p_q = manager.pq()
 c_q = manager.cq()
 
 while True:
-    if c_q.empty():#如果结果集队列空
+    if c_q.empty():  # 如果结果集队列空
         time.sleep(1)
         print("静静的等待计算结果中。。。。。。")
     else:
-        r = c_q.get()#获得传来的计算结果
+        r = c_q.get()  # 获得传来的计算结果
         print("收到任务计算结果%s" % r)
 '''
 在终端分别启动`python3 God.py` `python3 producer.py` `python3 Consumer.py`

@@ -1,3 +1,11 @@
+'''
+Author: J.sky bosichong@qq.com
+Date: 2022-10-26 21:02:49
+LastEditors: J.sky bosichong@qq.com
+LastEditTime: 2022-11-24 10:07:50
+FilePath: /PythonStudy/casbin/casbin_acl_test.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 
 
 from casbin import FileAdapter
@@ -10,25 +18,15 @@ policy_dir = os.path.join(os.path.dirname(__file__), 'policy.csv')
 
 p_dir = FileAdapter(policy_dir)
 # 加载配置文件
-e = casbin.Enforcer(model_dir,p_dir)
+e = casbin.Enforcer(model_dir,policy_dir)
 
 
-# # 组装数据库的绝对地址
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-# DB_DIR = os.path.join(BASE_DIR, 'test.db')
-# # 数据库访问地址
-# SQLALCHEMY_DATABASE_URL = "sqlite:///" + DB_DIR
-# # 从数据库加载casbin的policy
-# adapter = casbin_sqlalchemy_adapter.Adapter(SQLALCHEMY_DATABASE_URL)
-# e = casbin.Enforcer(model_dir, adapter)
 
 
-p_dir.save_policy(["alice", "data3", "read"])
-# e.update_policy(["alice", "data1", "read"],["alice", "data2", "write"])
-# e.remove_policy(["alice", "data4","write"])
+
 
 sub = "alice"  # 想要访问资源的用户
-obj = "data1"  # 将要被访问的资源
+obj = "data8"  # 将要被访问的资源
 act = "read"  # 用户对资源进行的操作
 
 

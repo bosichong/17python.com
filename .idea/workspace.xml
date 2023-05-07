@@ -1,10 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="7ecf84df-9254-4ed1-aaf8-e951adadeacc" name="Default" comment="测试了socketserver的测试">
+      <change afterPath="$PROJECT_DIR$/io/shutil_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PythonStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PythonStudy.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/GUISocket/GUI_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCP/基础/TCP_Clisock.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/基础/TCP_Clisock.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TCP/基础/TCP_Server.py" beforeDir="false" afterPath="$PROJECT_DIR$/TCP/基础/TCP_Server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asyncio/testasyncio.py" beforeDir="false" afterPath="$PROJECT_DIR$/asyncio/testasyncio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asyncio/testio.py" beforeDir="false" afterPath="$PROJECT_DIR$/asyncio/testio.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin/casbin_acl_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/casbin/casbin_acl_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin/casbin_rbac_test.py" beforeDir="false" afterPath="$PROJECT_DIR$/casbin/casbin_rbac_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin/policy.csv" beforeDir="false" afterPath="$PROJECT_DIR$/casbin/policy.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/casbin/test_rbac.db" beforeDir="false" afterPath="$PROJECT_DIR$/casbin/test_rbac.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/counttest.py" beforeDir="false" afterPath="$PROJECT_DIR$/counttest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/datetime/datetimetest.py" beforeDir="false" afterPath="$PROJECT_DIR$/datetime/datetimetest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io/fileopentest.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/fileopentest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/io/ospathtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/io/ospathtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log/logtest.py" beforeDir="false" afterPath="$PROJECT_DIR$/log/logtest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiprocessingtest.py/God.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiprocessingtest.py/God.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +65,6 @@
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$USER_HOME$/anaconda3/envs/learn/lib/python3.8/socketserver.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$USER_HOME$/anaconda3/envs/learn/lib/python3.8/http/server.py" root0="FORCE_HIGHLIGHTING" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -80,6 +96,9 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
     <option name="showPreview" value="true" />
@@ -137,19 +156,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  }
+}</component>
   <component name="ReaderModeSettings">
     <option name="enabled" value="false" />
   </component>
@@ -159,29 +172,7 @@
       <recent name="$PROJECT_DIR$/Django" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.retest">
-    <configuration name="GUI_Clisock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TCP/GUISocket" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCP/GUISocket/GUI_Clisock.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.shutil_test">
     <configuration name="GUI_Server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -204,7 +195,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="ScrollbarTest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="TCP_Clisock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -212,12 +203,34 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/gui" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TCP/基础" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/gui/ScrollbarTest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCP/基础/TCP_Clisock.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TCP_Server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TCP/基础" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="false" />
+      <option name="ADD_SOURCE_ROOTS" value="false" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCP/基础/TCP_Server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -270,6 +283,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="shutil_test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonStudy" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/io" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/io/shutil_test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="PythonStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -292,43 +327,21 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_start" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonStudy" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/TCP/GUISocket" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/TCP/GUISocket/test_start.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.test" />
+      <item itemvalue="Python.shutil_test" />
+      <item itemvalue="Python.TCP_Clisock" />
+      <item itemvalue="Python.TCP_Server" />
       <item itemvalue="Python.GUI_Server" />
-      <item itemvalue="Python.test_start" />
-      <item itemvalue="Python.ScrollbarTest" />
-      <item itemvalue="Python.GUI_Clisock" />
       <item itemvalue="Python.retest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.shutil_test" />
+        <item itemvalue="Python.TCP_Server" />
+        <item itemvalue="Python.TCP_Clisock" />
         <item itemvalue="Python.retest" />
         <item itemvalue="Python.GUI_Server" />
-        <item itemvalue="Python.ScrollbarTest" />
-        <item itemvalue="Python.GUI_Clisock" />
-        <item itemvalue="Python.test_start" />
       </list>
     </recent_temporary>
   </component>
@@ -429,26 +442,10 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="测试了socketserver的测试" />
     <option name="LAST_COMMIT_MESSAGE" value="测试了socketserver的测试" />
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PythonStudy$GUI_Server.coverage" NAME="GUI_Server 覆盖结果" MODIFIED="1656058071545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
-    <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test__Unittest.coverage" NAME="mytest.Test 的 Unittest 覆盖结果" MODIFIED="1625613447328" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
-    <SUITE FILE_PATH="coverage/PythonStudy$json_test.coverage" NAME="json_test 覆盖结果" MODIFIED="1655599391786" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/json" />
-    <SUITE FILE_PATH="coverage/PythonStudy$logtest.coverage" NAME="logtest 覆盖结果" MODIFIED="1625612757951" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/log" />
-    <SUITE FILE_PATH="coverage/PythonStudy$listbox.coverage" NAME="listbox 覆盖结果" MODIFIED="1655967915577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
-    <SUITE FILE_PATH="coverage/PythonStudy$test_main.coverage" NAME="test_main 覆盖结果" MODIFIED="1625612804691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/算法" />
-    <SUITE FILE_PATH="coverage/PythonStudy$mytest_TestStringMethods_test_isupper__Unittest.coverage" NAME="mytest.TestStringMethods.test_isupper 的 Unittest 覆盖结果" MODIFIED="1625612929342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
-    <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case3__Unittest.coverage" NAME="mytest.Test.test_case3 的 Unittest 覆盖结果" MODIFIED="1625613441651" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
-    <SUITE FILE_PATH="coverage/PythonStudy$GUI_Clisock.coverage" NAME="GUI_Clisock 覆盖结果" MODIFIED="1656056374633" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
-    <SUITE FILE_PATH="coverage/PythonStudy$retest.coverage" NAME="retest 覆盖结果" MODIFIED="1656204559878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/re" />
-    <SUITE FILE_PATH="coverage/PythonStudy$mytest_Test_test_case2__Unittest.coverage" NAME="mytest.Test.test_case2 的 Unittest 覆盖结果" MODIFIED="1625753632793" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pyunittest" />
-    <SUITE FILE_PATH="coverage/PythonStudy$test_start.coverage" NAME="test_start 覆盖结果" MODIFIED="1655859892567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/TCP/GUISocket" />
-    <SUITE FILE_PATH="coverage/PythonStudy$ScrollbarTest.coverage" NAME="ScrollbarTest 覆盖结果" MODIFIED="1656057242628" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gui" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/thread/threadlock.py">

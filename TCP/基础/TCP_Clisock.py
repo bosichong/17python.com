@@ -1,4 +1,4 @@
-#codeing=utf-8
+# codeing=utf-8
 # @Time    : 2017-10-12
 # @Author  : J.sky
 # @Mail    : bosichong@qq.com
@@ -13,10 +13,11 @@
 # Python中创建TCP服务器与客户端进行通信
 ###################################
 from socket import *
+
 HOST = '127.0.0.1'
 PORT = 8888
 BUFSIZ = 1024
-ADDR = (HOST,PORT)
+ADDR = (HOST, PORT)
 # 创建客户端，并连接服务器
 tcpCliSock = socket()
 tcpCliSock.connect(ADDR)
@@ -24,7 +25,7 @@ tcpCliSock.connect(ADDR)
 while True:
     data = input("> ")
     tcpCliSock.sendall(data.encode('utf-8'))
-    if 'exit' == data :break
+    if 'exit' == data: break
     data = tcpCliSock.recv(BUFSIZ)
     print(data.decode())
 tcpCliSock.close()

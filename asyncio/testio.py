@@ -1,3 +1,11 @@
+'''
+Author: J.sky bosichong@qq.com
+Date: 2021-03-04 13:47:20
+LastEditors: J.sky bosichong@qq.com
+LastEditTime: 2022-12-02 20:13:21
+FilePath: /PythonStudy/asyncio/testio.py
+Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+'''
 import requests
 import time
 from concurrent.futures import ThreadPoolExecutor, ProcessPoolExecutor
@@ -10,23 +18,15 @@ def getHtml(url):
     print("{}  {}".format(url,r.status_code))
     print("{} 的requests 测试结束！！".format(url))
 
-urls = ["http://2vv.net",
+urls = [
         "http://www.qq.com",
         "http://www.163.com",
         "http://www.sina.com.cn",
-        "http://sports.sina.com.cn/nba/",
-        "http://news.sina.com.cn/",
-        "http://mil.news.sina.com.cn/",
-        "http://news.sina.com.cn/society/",
-        "http://news.sina.com.cn/world/",
-        "http://finance.sina.com.cn/",
-        "http://finance.sina.com.cn/stock/",
-        "http://finance.sina.com.cn/fund/",
-        "http://finance.sina.com.cn/forex/",
-        "http://tech.sina.com.cn/",
-        "http://mobile.sina.com.cn/",
-        "http://tech.sina.com.cn/discovery/",
-        "http://zhongce.sina.com.cn/"]
+        "http://www.baidu.com",
+        "https://www.csdn.net/",
+        "https://gitee.com/",
+        "https://github.com/"
+        ]
 
 def main():
     print(f"started at {time.strftime('%X')}")
